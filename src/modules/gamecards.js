@@ -57,7 +57,7 @@ function renderCards(games) {
         `
         <div class="hover-3d" id="gamecard-${game.platform}-${game.year}-${gameId}">
             <figure>
-                <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[400px] gamecard-bg-${gamecardColor} backdrop-blur-md border gamecard-border-${gamecardColor}">
+                <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[295px] md:max-w-[400px] gamecard-bg-${gamecardColor} backdrop-blur-md border gamecard-border-${gamecardColor}">
                                 <div class="flex justify-end w-full">
                                     <span class="text-${gamecardTextColor} text-2xl leading-none font-silkscreen">
                                         #${gameId}
