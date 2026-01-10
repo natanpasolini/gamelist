@@ -26,6 +26,9 @@
 .platform-emulador {
     background: #9c27b0;
 }
+.platform-xbox {
+    background: rgb(1, 153, 21);
+}
 
 .platform-switch {
     background: #ff1515;

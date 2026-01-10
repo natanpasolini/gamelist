@@ -54,12 +54,12 @@ function renderizarCards(jogos) {
         const gamecardHtml =
         `<div class="rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[400px] gamecard-bg-${gamecardColor}">
                         <div class="relative">
-                            <div class="px-3 py-0 m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-0">
-                                <span class="text-${gamecardTextColor} text-3xl leading-none font-micro-5">
+                            <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
+                                <span class="text-${gamecardTextColor} text-2xl leading-none font-silkscreen">
                                     ${jogo.year}
                                 </span>
                             </div>
-                            <div class="w-full px-4 py-2">
+                            <div class="w-full px-5 py-3">
                                 <div class="border-2 rounded">
                                     <div class="aspect-video flex justify-center">
                                         <img src="${jogo.img}" class="aspect-video border border-white rounded object-cover">
@@ -77,13 +77,13 @@ function renderizarCards(jogos) {
                                 <div class="flex flex-col items-start pt-1 border-2 gap-1 bg-black">
                                     <div class="flex justify-start items-center pl-2 gap-2">
                                         <i class="hn hn-trophy-solid text-yellow-300 text-3xl"></i>
-                                        <span class="text-${gamecardTextColor} leading-none text-3xl font-micro-5" id="gamecard-achievements">
+                                        <span class="text-${gamecardTextColor} leading-none text-3xl font-micro-5 select-none" id="gamecard-achievements">
                                             ${achievements}
                                         </span>
                                     </div>
                                     <div class="flex justify-start items-center pl-2 gap-2">
                                         <i class="hn hn-clock text-yellow-300 text-3xl"></i>
-                                        <span class="text-white leading-none text-3xl font-micro-5" id="gamecard-hours">
+                                        <span class="text-white leading-none text-3xl font-micro-5 select-none" id="gamecard-hours">
                                             ${jogo.hours}h
                                         </span>
                                     </div>
@@ -93,7 +93,7 @@ function renderizarCards(jogos) {
                                         <i class="hn hn-${platformicon} text-3xl text-white"></i>
                                     </div>
                                     <div class="p-2 flex justify-center items-center w-full border-2 score-${jogo.score}">
-                                        <span class="text-3xl font-pixelify-sans">
+                                        <span class="text-3xl font-pixelify-sans select-none">
                                             ${jogo.score}
                                         </span>
                                     </div>
