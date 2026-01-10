@@ -22,8 +22,7 @@ function processarCSV(texto) {
             year: valores[6]
         };
     });
-
-    console.log(listaJogos);
+    listaJogos.reverse();
     renderizarCards(listaJogos);
 }
 
@@ -60,23 +59,23 @@ function renderizarCards(jogos) {
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center items-center">
-                            <div class="bg-black p-1 w-full justify-center items-center">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <div class="bg-black p-1 w-full flex justify-center items-center">
                                 <h1 class="text-${gamecardTextColor} text-center text-base font-silkscreen">
                                     ${jogo.title}
                                 </h1>
                             </div>
                             <div class="grid grid-cols-2 w-full">
-                                <div class="flex flex-col items-start pt-1 border-2 gap-1">
+                                <div class="flex flex-col items-start pt-1 border-2 gap-1 bg-black">
                                     <div class="flex justify-start items-center pl-2 gap-2">
-                                        <i class="hn hn-trophy-solid text-yellow-300 text-3xl text-stroke"></i>
-                                        <span class="text-${gamecardTextColor} leading-none text-3xl font-micro-5 text-stroke" id="gamecard-achievements">
+                                        <i class="hn hn-trophy-solid text-yellow-300 text-3xl"></i>
+                                        <span class="text-${gamecardTextColor} leading-none text-3xl font-micro-5" id="gamecard-achievements">
                                             ${jogo.achievements}/${jogo.maxachievements}
                                         </span>
                                     </div>
                                     <div class="flex justify-start items-center pl-2 gap-2">
-                                        <i class="hn hn-clock text-yellow-300 text-3xl text-stroke"></i>
-                                        <span class="text-white leading-none text-3xl font-micro-5 text-stroke" id="gamecard-hours">
+                                        <i class="hn hn-clock text-yellow-300 text-3xl"></i>
+                                        <span class="text-white leading-none text-3xl font-micro-5" id="gamecard-hours">
                                             ${jogo.hours}h
                                         </span>
                                     </div>

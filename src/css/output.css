@@ -202,6 +202,12 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-\[60px\] {
+    min-height: 60px;
+  }
   .w-full {
     width: 100%;
   }
@@ -332,16 +338,6 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .text-stroke {
-    -webkit-text-fill-color: var(--tst-text-stroke-fill-color, currentColor);
-    -webkit-text-stroke-width: var(--tst-text-stroke-width, thin);
-    -webkit-text-stroke-color: var(--tst-text-stroke-color, black);
-  }
-  .text-stroke-2 {
-    -webkit-text-fill-color: var(--tst-text-stroke-fill-color, currentColor);
-    -webkit-text-stroke-width: var(--tst-text-stroke-width, 2px);
-    -webkit-text-stroke-color: var(--tst-text-stroke-color, black);
   }
   .select-none {
     -webkit-user-select: none;

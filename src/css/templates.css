@@ -31,8 +31,32 @@
     background: #ff1515;
 }
 
+.score-F {
+    background: #546e7a;
+}
+
+.score-D {
+    background: #a1887f;
+}
+
+.score-C {
+    background: #00e676;
+}
+
+.score-B {
+    background: #1de9b6;
+}
+
+.score-A {
+    background: #2979ff;
+}
+
 .score-S {
     background: #f50057;
+}
+
+.score-SS {
+    background: #ff6d00;
 }
 
 .score-SSS {
