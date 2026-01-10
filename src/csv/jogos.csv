@@ -1,86 +1,86 @@
-title,platform,achievements,maxachievements,hours,score,year
-Assassin's Creed Syndicate,Steam,0,56,18,S,2020
-FarCry Primal,Uplay,18,55,49,A,2020
-Lego Star Wars: The Force Awakens,Steam,69,69,39,SS,2020
-Minecraft Dungeons,PC,19,104,11,A,2020
-Resident Evil 2 (2019),Steam,28,44,17,SSS,2020
-Superhot,Steam,17,26,7,S,2020
-The Legend of Zelda: Breath of the Wild,Emulador,,,130,,2020
-World War Z,Steam,4,35,8,A,2020
-Bloons TD 6,Steam,56,150,50,S,2021
-Hollow Knight,Switch,,,60,SSS,2021
-Middle-Earth: Shadow of War,Steam,46,72,48,SS,2021
-Resident Evil 3 (2020),Steam,32,32,13,A,2021
-Resident Evil 5,Steam,32,70,12,B,2021
-Resident Evil Revelations,Steam,22,50,15,A,2021
-Resident Evil Village,Steam,32,56,19,A,2021
-Saints Row IV,Steam,24,73,22,S,2021
-Star Wars: Battlefront II,Epic,,,44,A,2021
-The Legend of Zelda: Breath of the Wild,Switch,,,90,SSS,2021
-Angel Punishment,Switch,,,10,C,2022
-Assassin's Creed Rogue,Switch,,,20,B,2022
-Bright Memory,Steam,12,12,1,A,2022
-Bright Memory: Infinite,Steam,30,30,6,S,2022
-Dead Estate,Steam,30,144,8,B,2022
-Forager,Steam,86,103,28,S,2022
-Ghostrunner,Steam,26,34,12,SS,2022
-Lego Incriveis,Steam,24,51,13,A,2022
-Metal Gear Solid V: Ground Zeroes,Steam,2,16,1,A,2022
-Metal Gear Solid V: The Phantom Pain,Steam,25,42,46,SS,2022
-Plants vs Zombies: Game of the Year,Steam,7,21,14,SS,2022
-Pokemon Shield,Switch,,,60,B,2022
-Raft,Steam,35,104,21,S,2022
-Resident Evil 6,Steam,20,70,17,C,2022
-Resident Evil 7 Biohazard,Steam,21,58,6,SS,2022
-Superhot Mind Control Delete,Steam,7,14,3,A,2022
-The Bonfire,Switch,,,5,D,2022
-Vampire Survivors,Steam,79,196,25,,2022
-Cyberpunk 2077,Steam,15,57,78,SS,2023
-Hogwarts Legacy,Steam,45,45,79,A,2023
-Marvel's Avengers,Steam,27,50,16,C,2023
-Resident Evil 4 (2005),Steam,12,12,32,SSS,2023
-Resident Evil 4 (2023),Steam,39,39,101,SSS,2023
-The Crew 2,Steam,15,34,23,A,2023
-The Legend of Zelda: Tears of the Kingdom,Switch,,,100,SSS,2023
-20 Minutes Till Dawn,Epic,,,1,A,2024
-Back 4 Blood,Steam,27,93,12,B,2024
-Balatro,Steam,13,31,22,SS,2024
-Buckshot Roulette,Steam,16,16,5,SS,2024
-Crime Boss: Rockay City,Steam,17,45,22,B,2024
-Cult of the Lamb,Steam,31,48,25,S,2024
-DAVE THE DIVER,Steam,35,43,36,SS,2024
-Escape Academy,PC,19,40,6,B,2024
-Gotham Knights,Steam,49,61,47,B,2024
-GRID Autosport,Switch,,,20,A,2024
-Grounded,PC,18,45,18,A,2024
-Halls Of Torment,Steam,158,500,13,A,2024
-Palworld,Steam,6,31,47,A,2024
-Stardew Valley,Steam,21,49,71,S,2024
-The Crew Motorfest,Uplay,34,50,76,A,2024
-Vampire Survivors,Switch,158,158,115,SSS,2024
-Diablo IV,PC,,,30,A,2024
-9 Kings (Acesso Antecipado),Steam,31,31,19,A,2025
-Batman - The Telltale Series,Steam,30,30,10,A,2025
-Batman: The Enemy Within - The Telltale Series,Steam,30,30,12,S,2025
-Be My Horde,Steam,,,6,C,2025
-Blue Estate,Steam,8,27,4,A,2025
-Dead Island 2,Epic,23,59,21,A,2025
-Dice People,Steam,10,10,2,D,2025
-Ender Lilies: Quietus of the Knights,Steam,38,38,19,S,2025
-Hunters Roulette,Steam,14,31,17,B,2025
-Persona 5 Royal,Steam,53,53,115,SS,2025
-Persona 5: The Phantom X (3.0),Steam,,,372,A,2025
-R.E.P.O,Steam,,,17,S,2025
-Resident Evil: Re:Verse,Steam,12,12,2,F,2025
-Tomb Raider (2013),Steam,17,50,10,S,2025
-Tower Wizard,Steam,12,12,4,C,2025
-Hollow Knight: Silksong,Steam,38,52,52,SS,2025
-RoboCop: Rogue City,Steam,27,27,11,A,2025
-Helldivers 2,Steam,38,38,90,SS,2025
-Second Stellar,Steam,7,7,12,B,2025
-Clair Obscur: Expedition 33,Steam,55,55,57,SSS,2025
-Control: Ultimate Edition,Steam,52,67,17,A,2025
-Rise of the Tomb Raider,Steam,35,143,19,A,2025
-Yakuza: Like a Dragon,Steam,48,63,56,SS,2025
-Mafia: Definitive Edtion,Steam,28,43,12,A,2026
-Warhammer 40k: Space Marine 2,Steam,22,50,20,S,2026
+title,platform,achievements,maxachievements,hours,score,year,steamid
+Assassin's Creed Syndicate,Steam,0.0,56.0,18,S,2020,368500
+FarCry Primal,Uplay,18.0,55.0,49,A,2020,371660
+Lego Star Wars: The Force Awakens,Steam,69.0,69.0,39,SS,2020,438640
+Minecraft Dungeons,PC,19.0,104.0,11,A,2020,1672970
+Resident Evil 2 (2019),Steam,28.0,44.0,17,SSS,2020,883710
+Superhot,Steam,17.0,26.0,7,S,2020,322500
+The Legend of Zelda: Breath of the Wild,Emulador,,,130,,2020,
+World War Z,Steam,4.0,35.0,8,A,2020,699130
+Bloons TD 6,Steam,56.0,150.0,50,S,2021,960090
+Hollow Knight,Switch,,,60,SSS,2021,367520
+Middle-Earth: Shadow of War,Steam,46.0,72.0,48,SS,2021,356190
+Resident Evil 3 (2020),Steam,32.0,32.0,13,A,2021,952060
+Resident Evil 5,Steam,32.0,70.0,12,B,2021,21690
+Resident Evil Revelations,Steam,22.0,50.0,15,A,2021,222480
+Resident Evil Village,Steam,32.0,56.0,19,A,2021,1196590
+Saints Row IV,Steam,24.0,73.0,22,S,2021,206420
+Star Wars: Battlefront II,Epic,,,44,A,2021,1237950
+The Legend of Zelda: Breath of the Wild,Switch,,,90,SSS,2021,
+Angel Punishment,Switch,,,10,C,2022,
+Assassin's Creed Rogue,Switch,,,20,B,2022,311560
+Bright Memory,Steam,12.0,12.0,1,A,2022,955050
+Bright Memory: Infinite,Steam,30.0,30.0,6,S,2022,1178830
+Dead Estate,Steam,30.0,144.0,8,B,2022,1484720
+Forager,Steam,86.0,103.0,28,S,2022,751780
+Ghostrunner,Steam,26.0,34.0,12,SS,2022,1139900
+Lego Incriveis,Steam,24.0,51.0,13,A,2022,818320
+Metal Gear Solid V: Ground Zeroes,Steam,2.0,16.0,1,A,2022,311340
+Metal Gear Solid V: The Phantom Pain,Steam,25.0,42.0,46,SS,2022,287700
+Plants vs Zombies: Game of the Year,Steam,7.0,21.0,14,SS,2022,3590
+Pokemon Shield,Switch,,,60,B,2022,
+Raft,Steam,35.0,104.0,21,S,2022,648800
+Resident Evil 6,Steam,20.0,70.0,17,C,2022,221040
+Resident Evil 7 Biohazard,Steam,21.0,58.0,6,SS,2022,418370
+Superhot Mind Control Delete,Steam,7.0,14.0,3,A,2022,690040
+The Bonfire,Switch,,,5,D,2022,788210
+Vampire Survivors,Steam,79.0,196.0,25,,2022,1794680
+Cyberpunk 2077,Steam,15.0,57.0,78,SS,2023,1091500
+Hogwarts Legacy,Steam,45.0,45.0,79,A,2023,990080
+Marvel's Avengers,Steam,27.0,50.0,16,C,2023,997070
+Resident Evil 4 (2005),Steam,12.0,12.0,32,SSS,2023,254700
+Resident Evil 4 (2023),Steam,39.0,39.0,101,SSS,2023,2050650
+The Crew 2,Steam,15.0,34.0,23,A,2023,646910
+The Legend of Zelda: Tears of the Kingdom,Switch,,,100,SSS,2023,
+20 Minutes Till Dawn,Epic,,,1,A,2024,1966900
+Back 4 Blood,Steam,27.0,93.0,12,B,2024,924970
+Balatro,Steam,13.0,31.0,22,SS,2024,2379780
+Buckshot Roulette,Steam,16.0,16.0,5,SS,2024,2835570
+Crime Boss: Rockay City,Steam,17.0,45.0,22,B,2024,2933080
+Cult of the Lamb,Steam,31.0,48.0,25,S,2024,1313140
+DAVE THE DIVER,Steam,35.0,43.0,36,SS,2024,1868140
+Escape Academy,PC,19.0,40.0,6,B,2024,1812090
+Gotham Knights,Steam,49.0,61.0,47,B,2024,1496790
+GRID Autosport,Switch,,,20,A,2024,255220
+Grounded,PC,18.0,45.0,18,A,2024,962130
+Halls Of Torment,Steam,158.0,500.0,13,A,2024,2218750
+Palworld,Steam,6.0,31.0,47,A,2024,1623730
+Stardew Valley,Steam,21.0,49.0,71,S,2024,413150
+The Crew Motorfest,Uplay,34.0,50.0,76,A,2024,2698940
+Vampire Survivors,Switch,158.0,158.0,115,SSS,2024,1794680
+Diablo IV,PC,,,30,A,2024,2344520
+9 Kings (Acesso Antecipado),Steam,32,54,19,A,2025,2784470
+Batman - The Telltale Series,Steam,30.0,30.0,10,A,2025,498240
+Batman: The Enemy Within - The Telltale Series,Steam,30.0,30.0,12,S,2025,675260
+Be My Horde,Steam,,,6,C,2025,2499520
+Blue Estate,Steam,8.0,27.0,4,A,2025,305380
+Dead Island 2,Epic,23.0,59.0,21,A,2025,934700
+Dice People,Steam,10.0,10.0,2,D,2025,3373670
+Ender Lilies: Quietus of the Knights,Steam,38.0,38.0,19,S,2025,1369630
+Hunters Roulette,Steam,14.0,31.0,17,B,2025,3591550
+Persona 5 Royal,Steam,53.0,53.0,115,SS,2025,1687950
+Persona 5: The Phantom X (3.0),Steam,,,372,A,2025,3061570
+R.E.P.O,Steam,,,17,S,2025,3241660
+Resident Evil: Re:Verse,Steam,12.0,12.0,2,F,2025,1236300
+Tomb Raider (2013),Steam,17.0,50.0,10,S,2025,203160
+Tower Wizard,Steam,12.0,12.0,4,C,2025,3372980
+Hollow Knight: Silksong,Steam,38.0,52.0,52,SS,2025,1030300
+RoboCop: Rogue City,Steam,27.0,27.0,11,A,2025,1681430
+Helldivers 2,Steam,38.0,38.0,90,SS,2025,553850
+Second Stellar,Steam,7.0,7.0,12,B,2025,3176850
+Clair Obscur: Expedition 33,Steam,55.0,55.0,57,SSS,2025,1903340
+Control: Ultimate Edition,Steam,52.0,67.0,17,A,2025,870780
+Rise of the Tomb Raider,Steam,35.0,143.0,19,A,2025,391220
+Yakuza: Like a Dragon,Steam,48.0,63.0,56,SS,2025,1235140
+Mafia: Definitive Edtion,Steam,28.0,43.0,12,A,2026,1030840
+Warhammer 40k: Space Marine 2,Steam,22.0,50.0,20,S,2026,2183900
