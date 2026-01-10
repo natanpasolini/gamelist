@@ -1,7 +1,6 @@
 @import url("./css/output.css");
 @import url("./css/templates.css");
 @import "tailwindcss";
-@plugin "@designbycode/tailwindcss-text-stroke";
 
 .font-micro-5 {
   font-family: "Micro 5", sans-serif;
@@ -20,4 +19,31 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+}
+
+@keyframes dropInEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-animado {
+    opacity: 0;
+    animation: dropIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.card-hidden {
+    opacity: 0;
+    transform: translateY(-70px);
+    visibility: hidden;
+}
+
+.card-visible {
+    visibility: visible;
+    animation: dropInEffect 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }

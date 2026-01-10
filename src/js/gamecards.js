@@ -29,7 +29,7 @@ function processarCSV(texto) {
 
 carregarDados();
 function renderizarCards(jogos) {
-    jogos.forEach(jogo => {
+    jogos.forEach((jogo, index) => {
         jogo.platform = jogo.platform.toLowerCase();
         let platformicon = jogo.platform;
         let gamecardColor = 'purple';
@@ -52,7 +52,7 @@ function renderizarCards(jogos) {
             gamecardTextColor = 'gold';
         }
         const gamecardHtml =
-        `<div class="rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[400px] gamecard-bg-${gamecardColor}">
+        `<div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[400px] gamecard-bg-${gamecardColor}">
                         <div class="relative">
                             <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
                                 <span class="text-${gamecardTextColor} text-2xl leading-none font-silkscreen">
@@ -102,6 +102,29 @@ function renderizarCards(jogos) {
                         </div>
                     </div>`;
         document.querySelector('#gamelist').innerHTML += gamecardHtml;
+        ativarObservador();
     });
 }
 
+const observer = new IntersectionObserver((entries) => {
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+
+    visibleEntries.forEach((entry, index) => {
+        setTimeout(() => {
+            entry.target.classList.add('card-visible');
+        }, index * 200);
+    });
+
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            entry.target.classList.remove('card-visible');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+function ativarObservador() {
+    const cards = document.querySelectorAll('.card-hidden');
+    cards.forEach(card => observer.observe(card));
+}
