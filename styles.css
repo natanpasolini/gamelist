@@ -1,5 +1,5 @@
-@import url("./css/output.css");
-@import url("./css/templates.css");
+@import url("./src/css/output.css");
+@import url("./src/css/templates.css");
 
 .font-micro-5 {
   font-family: "Micro 5", sans-serif;

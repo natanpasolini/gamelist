@@ -1,5 +1,5 @@
 export async function importCSV() {
-    const url = "./csv/games.csv";
+    const url = "src/csv/games.csv";
     const feedback = await fetch(url);
     const data = await feedback.text();
     

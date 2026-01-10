@@ -1,4 +1,4 @@
-import { importCSV, useObserver } from './modules/gamecards.js';
+import { importCSV, useObserver } from './src/modules/gamecards.js';
 
 function filterCards(platform, year) {
     platform = platform.toLowerCase();
