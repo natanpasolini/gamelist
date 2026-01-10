@@ -2,7 +2,7 @@ title,platform,achievements,maxachievements,hours,score,year,steamid
 Assassin's Creed Syndicate,Steam,0,56,18,S,2020,368500
 FarCry Primal,Uplay,18,55,49,A,2020,371660
 Lego Star Wars: The Force Awakens,Steam,69,69,39,SS,2020,438640
-Minecraft Dungeons,PC,19,104,11,A,2020,1672970
+Minecraft Dungeons,GP,19,104,11,A,2020,1672970
 Resident Evil 2 (2019),Steam,28,44,17,SSS,2020,883710
 Superhot,Steam,17,26,7,S,2020,322500
 The Legend of Zelda: Breath of the Wild,Emulador,,,130,,2020,
@@ -15,7 +15,7 @@ Resident Evil 5,Steam,32,70,12,B,2021,21690
 Resident Evil Revelations,Steam,22,50,15,A,2021,222480
 Resident Evil Village,Steam,32,56,19,A,2021,1196590
 Saints Row IV,Steam,24,73,22,S,2021,206420
-Star Wars: Battlefront II,Epic,,0,44,A,2021,1237950
+Star Wars: Battlefront II,Epic,,,44,A,2021,1237950
 The Legend of Zelda: Breath of the Wild,Switch,0,0,90,SSS,2021,
 Angel Punishment,Switch,0,0,10,C,2022,
 Assassin's Creed Rogue,Switch,0,0,20,B,2022,311560
@@ -46,10 +46,10 @@ The Legend of Zelda: Tears of the Kingdom,Switch,,,100,SSS,2023,
 Back 4 Blood,Steam,27,93,12,B,2024,924970
 Balatro,Steam,13,31,22,SS,2024,2379780
 Buckshot Roulette,Steam,16,16,5,SS,2024,2835570
-"q ",Steam,17,45,22,B,2024,2933080
+Crime Boss: Rockay City,Steam,17,45,22,B,2024,2933080
 Cult of the Lamb,Steam,31,48,25,S,2024,1313140
 DAVE THE DIVER,Steam,35,43,36,SS,2024,1868140
-Escape Academy,Xbox,19,40,6,B,2024,1812090
+Escape Academy,GP,19,40,6,B,2024,1812090
 Gotham Knights,Steam,49,61,47,B,2024,1496790
 GRID Autosport,Switch,,,20,A,2024,255220
 Grounded,Xbox,18,45,18,A,2024,962130
@@ -58,7 +58,7 @@ Palworld,Steam,6,31,47,A,2024,1623730
 Stardew Valley,Steam,21,49,71,S,2024,413150
 The Crew Motorfest,Uplay,34,50,76,A,2024,2698940
 Vampire Survivors,Switch,158,158,115,SSS,2024,1794680
-Diablo IV,Xbox,,,30,A,2024,2344520
+Diablo IV,GP,,,30,A,2024,2344520
 9 Kings (Acesso Antecipado),Steam,31,31,19,A,2025,2784470
 Batman - The Telltale Series,Steam,30,30,10,A,2025,498240
 Batman: The Enemy Within - The Telltale Series,Steam,30,30,12,S,2025,675260

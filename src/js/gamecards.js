@@ -29,12 +29,14 @@ function processarCSV(texto) {
 
 carregarDados();
 function renderizarCards(jogos) {
+    let idJogo = jogos.length + 1;
     jogos.forEach((jogo, index) => {
         jogo.platform = jogo.platform.toLowerCase();
         let platformicon = jogo.platform;
         let gamecardColor = 'purple';
         let gamecardTextColor = 'white';
-        let achievements = `${jogo.achievements}/${jogo.maxachievements}`
+        let achievements = `${jogo.achievements}/${jogo.maxachievements}`;
+        idJogo -= 1;
         if (jogo.maxachievements == 'N/A') {
             achievements = 'N/A';
         }
@@ -44,8 +46,11 @@ function renderizarCards(jogos) {
         if (jogo.platform == 'emulador' || jogo.platform == 'switch') {
             platformicon = 'gaming';
         }
-        else if (jogo.platform !== 'steam' && jogo.platform != 'emulador') {
+        else if (jogo.platform !== 'steam') {
             platformicon = 'technology';
+        }
+        if (jogo.platform == 'gp') {
+            jogo.platform = 'xbox';
         }
         if (jogo.achievements == jogo.maxachievements && jogo.maxachievements != 'N/A') {
             gamecardColor = 'gold';
@@ -53,6 +58,11 @@ function renderizarCards(jogos) {
         }
         const gamecardHtml =
         `<div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md max-w-[400px] gamecard-bg-${gamecardColor}">
+                        <div class="flex justify-end w-full">
+                            <span class="text-${gamecardTextColor} text-2xl leading-none font-silkscreen">
+                                #${idJogo}
+                            </span>
+                        </div>
                         <div class="relative">
                             <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
                                 <span class="text-${gamecardTextColor} text-2xl leading-none font-silkscreen">
@@ -102,8 +112,8 @@ function renderizarCards(jogos) {
                         </div>
                     </div>`;
         document.querySelector('#gamelist').innerHTML += gamecardHtml;
-        ativarObservador();
     });
+    ativarObservador();
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -112,16 +122,12 @@ const observer = new IntersectionObserver((entries) => {
     visibleEntries.forEach((entry, index) => {
         setTimeout(() => {
             entry.target.classList.add('card-visible');
+            observer.unobserve(entry.target);
         }, index * 200);
     });
-
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            entry.target.classList.remove('card-visible');
-        }
-    });
 }, {
-    threshold: 0.2
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 });
 
 function ativarObservador() {
