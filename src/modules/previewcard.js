@@ -25,6 +25,7 @@ function previewCardChange(title,year,achievements,hours,score,img) {
     const previewYear = document.getElementById('previewcardYear');
     const previewHours = document.getElementById('previewcardHours');
     const previewScore = document.getElementById('previewcardScore');
+    const previewScoreBG = document.getElementById('previewcardScoreBG')
     const previewImg = document.getElementById('previewcardImg');
 
     if (title == '' || title == null) {
@@ -61,5 +62,10 @@ function previewCardChange(title,year,achievements,hours,score,img) {
     previewAchievements.innerHTML = achievements;
     previewHours.innerHTML = hours;
     previewScore.innerHTML = score;
+    const scoreClasses = ['score-N/A','score-F','score-D','score-C','score-B','score-A','score-S','score-SS','score-SSS'];
+    scoreClasses.forEach(score => {
+        previewScoreBG.classList.remove(score);
+    });
+    previewScoreBG.classList.add(`score-${score}`)
     previewImg.src = `${img}`;
 }

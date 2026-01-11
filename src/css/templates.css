@@ -50,6 +50,10 @@
     background: linear-gradient(180deg,rgba(255, 0, 0, 1) 0%, rgba(128, 0, 0, 1) 100%);
 }
 
+.score-N\/A {
+    background: black;
+}
+
 .score-F {
     background: #546e7a;
 }
