@@ -50,11 +50,7 @@ async function getLastCommit() {
     } catch (error) {
         console.error('Erro ao buscar commit:', error);
     }
-}
-
-document.getElementById('github').addEventListener('click', () => {
-    window.open('https://github.com/natanpasolini/gamelist');
-});
+};
 
 importCSV();
 getLastCommit();
