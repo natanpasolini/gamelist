@@ -10,10 +10,11 @@ export function writeToData(t,y,a,ma,h,s,i) {
     sendCardData(data);
 };
 
-let cardExisting = -1;
+let cardsID = -1;
+let cardsCreated = 0;
 
 function sendCardData(data) {
-    const id = cardExisting + 1;
+    const id = cardsID + 1;
     const title = data[id][0];
     const year = data[id][1];
     const achievements = data[id][2];
@@ -26,6 +27,9 @@ function sendCardData(data) {
         golden = true;
     }
 
+    cardsCreated += 1;
+    if (cardsCreated == 1) {
+        document.getElementById('newGameCard').classList.add('hidden');
+    };
     buildCard(title,year,achievements,maxachievements,hours,score,imglink,golden);
-    cardExisting += 1;
 };

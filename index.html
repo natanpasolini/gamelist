@@ -26,8 +26,13 @@
                     <p class="text-[12px] font-pixelify-sans">Clique aqui para ver a última atualização do site!</p>
                 </div>
             </div>
-            <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalGuia.showModal()">
-                <i class="hn hn-question text-white text-[24px]"></i>
+            <div class="flex flex-row gap-2">
+                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalGuia.showModal()">
+                    <i class="hn hn-question text-white text-[24px]"></i>
+                </div>
+                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalTest.showModal()">
+                    <i class="hn hn-plus-solid text-white text-[24px]"></i>
+                </div>
             </div>
             <div class="flex flex-row justify-center gap-4">
                 <div class="flex items-center rounded text-white relative w-[170px] group">
@@ -70,7 +75,7 @@
             <div class="flex flex-row justify-center items-center gap-4">
                 <div class="hover-3d">
                     <figure>
-                        <div class="hidden md:flex rounded-xl flex-col py-6 px-4 shadow-md md:max-w-[400px] md:max-h-[400px] gamecard-bg-basic gamecard-border-basic backdrop-blur-md border">
+                        <div class="hidden md:flex rounded-xl flex-col py-6 px-4 shadow-md w-[400px] gamecard-bg-basic gamecard-border-basic backdrop-blur-md border">
                             <div class="relative">
                                 <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
                                     <span class="text-white text-2xl leading-none font-silkscreen" id="previewcardYear">
@@ -107,10 +112,7 @@
                                         </div>
                                     </div>
                                     <div class="flex justify-center h-20">
-                                        <div class="w-full p-2 flex justify-center items-center border-2 border-black border-x-0 platform-${game.platform}">
-                                            <i class="hn hn-steam text-3xl text-white"></i>
-                                        </div>
-                                        <div class="p-2 flex justify-center items-center w-full border-2 border-black score-${game.score}">
+                                        <div class="p-2 flex justify-center items-center w-full border-2 border-black score-A">
                                             <span class="text-3xl font-pixelify-sans select-none" id="previewcardScore">
                                                 NOTA
                                             </span>
@@ -130,11 +132,11 @@
                     <div></div>
                 </div>
                 <div class="w-[400px] h-[400px]">
-                    <form class="flex flex-col gap-4 h-full">
+                    <form class="flex flex-col gap-4 h-full"  id="cardCreator">
                         <h1 class="text-white font-silkscreen">Configurações</h1>
                         <div class="flex flex-row gap-4 rounded w-full">
-                            <input type="text" placeholder="TITULO" id="inputGameTitle" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
-                            <input type="text" maxlength="4" placeholder="ANO" id="inputGameYear" class="min-w-0 w-[20%] border-b border-white font-silkscreen text-white outline-none">
+                            <input type="text" required placeholder="TITULO" id="inputGameTitle" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
+                            <input type="text" minlength="4" maxlength="4" required placeholder="ANO" id="inputGameYear" class="min-w-0 w-[20%] border-b border-white font-silkscreen text-white outline-none">
                         </div>
                         <div class="flex flex-col w-full">
                             <h1 class="text-white font-silkscreen">CONQUISTAS</h1>
@@ -170,9 +172,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center h-full">
-                            <div class="rounded-sm bg-red-600 p-2 font-silkscreen disabled:bg-stone-700 disabled:text-stone-800 disabled:shadow-none" id="cardCreator">
-                                Criar Card
-                            </div>
+                            <input type="submit" value="Criar Card" class="rounded-sm bg-red-600 p-2 font-silkscreen disabled:bg-stone-700 disabled:text-stone-800 disabled:shadow-none"></input>
                         </div>
                     </form>
                 </div>
@@ -184,24 +184,26 @@
 
     <!-- Seção com grid dos gamecards (os gamecards são adicionados pelo gamecards.js) -->
     <section class="flex justify-center items-start py-10 bg-stone-900" style="min-height: 100vh;">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gamelist">
-            <div class="hover-3d">
-                <figure class="flex justify-center items-center w-full h-full">
-                    <div class="rounded-xl flex flex-col justify-center items-center pt-5 shadow-md w-[295px] h-[295px] md:w-[400px] md:h-[400px] backdrop-blur-md border border-neutral-700">
-                        <div class="flex justify-center items-center rounded-full border-neutral-700 bg-neutral-800 p-2" onclick="modalTest.showModal()">
-                            <i class="hn hn-plus-solid text-white text-xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full max-w-[1300px] justify-items-center" id="gamelist">
+            <div class="flex flex-row justify-center items-center w-full gap-4" id="newGameCard">
+                <div class="hover-3d">
+                    <figure>
+                        <div class="w-[295px] h-[295px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px] rounded-xl flex flex-col justify-center items-center pt-5 shadow-md backdrop-blur-md border border-neutral-700">
+                            <div class="flex justify-center items-center rounded-full border-neutral-700 bg-neutral-800 p-2" onclick="modalTest.showModal()">
+                                <i class="hn hn-plus-solid text-white text-xl"></i>
+                            </div>
+                            <h3 class="font-silkscreen select-none">Novo Jogo</h3>
                         </div>
-                        <h3 class="font-silkscreen select-none">Novo Jogo</h3>
-                    </div>
-                </figure>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </div>
     </section>

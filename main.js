@@ -109,7 +109,8 @@ function previewCardChange(title,year,achievements,hours,score,img) {
     previewImg.src = `${img}`;
 }
 
-document.getElementById('cardCreator').addEventListener('click', () => {
+document.getElementById('cardCreator').addEventListener('submit', (event) => {
+    event.preventDefault();
     let t = document.getElementById('inputGameTitle').value;
     let y = document.getElementById('inputGameYear').value;
     let a = document.getElementById('inputGameAch').value;
@@ -118,4 +119,5 @@ document.getElementById('cardCreator').addEventListener('click', () => {
     let s = document.getElementById('inputGameScore').value;
     let i = document.getElementById('inputGameImg').value;
     writeToData(t,y,a,ma,h,s,i);
+    event.target.reset();
 });
