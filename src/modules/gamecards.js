@@ -1,3 +1,5 @@
+import { useObserver } from "./observer.js";
+
 export async function importCSV() {
     const url = "src/csv/games.csv";
     const feedback = await fetch(url);
@@ -41,7 +43,7 @@ export function buildCard(title,year,achievements,maxachievements,hours,score,im
         bgColor = 'gold';
     }
     const templateHtml = `
-    <div class="flex flex-row justify-center items-center w-full gap-4">
+    <div class="flex flex-row justify-center items-center w-full gap-4" id="gamecard-${year}">
                 <div class="hover-3d">
                     <figure>
                         <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md w-[295px] md:w-[350px] xl:w-[400px] gamecard-bg-${bgColor} backdrop-blur-md border gamecard-border-${bgColor}">
@@ -102,21 +104,5 @@ export function buildCard(title,year,achievements,maxachievements,hours,score,im
                 </div>`;
     document.querySelector('#gamelist').insertAdjacentHTML('afterbegin', templateHtml);
     useObserver();
-};
-
-const observer = new IntersectionObserver((entries) => {
-    const visible = entries.filter(e => e.isIntersecting);
-    
-    visible.forEach((entry, index) => {
-        setTimeout(() => {
-                entry.target.classList.add('card-visible');
-                observer.unobserve(entry.target); 
-            }, index * 100); 
-        });
-}, { threshold: 0.1, rootMargin: '100px' });
-
-export function useObserver() {
-    const cards = document.querySelectorAll('.card-hidden');
-    cards.forEach(card => observer.observe(card));
 };
 

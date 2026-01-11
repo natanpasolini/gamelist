@@ -28,6 +28,7 @@ function sendCardData(data) {
     }
 
     cardsCreated += 1;
+    cardsID += 1;
     if (cardsCreated == 1) {
         document.getElementById('newGameCard').classList.add('hidden');
     };
