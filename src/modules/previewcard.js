@@ -37,6 +37,10 @@ function previewCardChange(title,year,achievements,hours,score,img) {
     if (score == '' || score == null) {
         score = 'N/A';
     }
+    if (img == '' || img == null) {
+        img = 'https://imgs.search.brave.com/1qZ1xZHKx_mRy0qHVnLPv0oVuMyN_P5s52GP9bd1m10/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEy/ODgyNjg4NC92ZWN0/b3Ivbm8taW1hZ2Ut/dmVjdG9yLXN5bWJv/bC1taXNzaW5nLWF2/YWlsYWJsZS1pY29u/LW5vLWdhbGxlcnkt/Zm9yLXRoaXMtbW9t/ZW50LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz0zOTBlNzZ6/Tl9USjdIWkhKcG5J/N2pObDdVQnBPM1VQ/N2hwUjJtZUUxUWQ0/PQ';
+    }
+
 
     previewTitle.innerHTML = title;
     previewYear.innerHTML = year;
