@@ -1,7 +1,5 @@
 ## Sobre o Projeto
-Projeto Web de uma lista de jogos 'zerados', projeto baseado em uma planilha pessoal da qual utilizo para anotar os jogos que completei, seu tempo de conclusão, conquistas alcançadas e uma nota que dei ao jogo.
-
-Este projeto tem como ideia transformar essa planilhe em algo visual, através de cards que mostram título, horas, nota e conquistas de cada jogo.
+Projeto Web de uma lista de jogos 'zerados'
 
 #### Tecnologias
 
@@ -32,9 +30,9 @@ Este projeto tem como ideia transformar essa planilhe em algo visual, através d
 
 #### Como testar
 Acesse o link do github pages:
-```bash
- não disponivel
-```
+
+https://natanpasolini.github.io/gamelist/
+
 ou
 
 Clone o repositório:

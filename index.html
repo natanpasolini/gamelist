@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackernoon/pixel-icon-library/fonts/iconfont.css">
 </head>
 <body class="relative">
+    <!-- Título -->
     <header class="flex justify-center items-center min-h-[200px] w-full bg-stone-900">
-        <h1 class="text-[40px] md:text-[72px] title font-silkscreen text-center">Naga's Gamelist</h1>
+        <h1 class="text-[40px] md:text-[72px] title font-silkscreen text-center">Naga's Gamecards</h1>
     </header>
 
-    <!-- sticky toolbar -->
+    <!-- Sticky toolbar -->
     <navbar>
         <div class="flex flex-col md:flex-row justify-between items-center p-4 gap-6 w-full sticky top-0 absolute bg-neutral-800 z-10 box-shadow border border-neutral-700">
             <div class="flex flex-row justify-start gap-4 rounded-xl px-3 hover:bg-neutral-700 cursor-pointer" onclick="window.open('https://github.com/natanpasolini/gamelist')">
@@ -32,6 +33,13 @@
                 </div>
                 <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalTest.showModal()">
                     <i class="hn hn-plus-solid text-white text-[24px]"></i>
+                </div>
+                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" id="downloadDB">
+                    <i class="hn hn-download-solid text-white text-[24px]"></i>
+                </div>
+                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" id="uploadDB">
+                    <i class="hn hn-upload-solid text-white text-[24px]"></i>
+                    <input type="file" id="fileInputHandler" class="hidden" accept=".json">
                 </div>
             </div>
             <div class="flex flex-row justify-center gap-4">
@@ -64,7 +72,18 @@
         </div>
     </navbar>
 
-    <!-- testando modal -->
+    <!-- Modal aviso de upload -->
+    <dialog id="modalAvisoUpload" class="modal">
+        <div class="flex flex-col justify-center items-center gap-4">
+            <div class="alert alert-warning max-w-[400px] md:max-w-full">
+                <i class="hn hn-exclamation-triangle-solid"></i>
+                <span class="font-silkscreen">Atenção: Fazer upload de uma database irá sobreescrever a sua atual!</span>
+            </div>
+            <button class="btn btn-warning font-silkscreen w-[100px] h-[30px]" onclick="modalAvisoUpload.close()">OK!</button>
+        </div>
+    </dialog>
+
+    <!-- Criador de Cards -->
     <dialog class="modal" id="modalTest">
         <div class="flex flex-col bg-neutral-800 border border-neutral-700 rounded-lg p-5 relative">
             <i class="hn hn-window-close-solid text-red-600 absolute top-2 right-2 hover:text-red-800 cursor-pointer" onclick="modalTest.close()"></i>
@@ -72,7 +91,7 @@
                 <div class="font-silkscreen text-lg">NOVO JOGO</div>
                 <span class="w-full h-[2px] gamecard-bg-basic rounded-full"></span>
             </div>
-            <div class="flex flex-row justify-center items-center gap-4">
+            <div class="flex flex-row justify-center items-center md:gap-4">
                 <div class="hover-3d">
                     <figure>
                         <div class="hidden md:flex rounded-xl flex-col py-6 px-4 shadow-md w-[400px] gamecard-bg-basic gamecard-border-basic backdrop-blur-md border">
@@ -174,6 +193,10 @@
                         <div class="flex justify-center items-center h-full">
                             <input type="submit" value="Criar Card" class="rounded-sm bg-red-600 p-2 font-silkscreen disabled:bg-stone-700 disabled:text-stone-800 disabled:shadow-none"></input>
                         </div>
+                        <div class="alert alert-warning">
+                            <i class="hn hn-exclamation-triangle-solid"></i>
+                            <span class="font-silkscreen">Não há um sistema de edição ou remoção de cards nesta versão!</span>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -182,7 +205,7 @@
     </dialog>
 
 
-    <!-- Seção com grid dos gamecards (os gamecards são adicionados pelo gamecards.js) -->
+    <!-- Grid dos gamecards (gamelist) -->
     <section class="flex justify-center items-start py-10 bg-stone-900" style="min-height: 100vh;">
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full max-w-[1300px] justify-items-center" id="gamelist">
             <div class="flex flex-row justify-center items-center w-full gap-4" id="newGameCard">
@@ -207,6 +230,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Script principal -->
     <script type="module" src="./main.js"></script>
 </body>
 </html>

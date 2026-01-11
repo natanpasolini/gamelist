@@ -1,5 +1,5 @@
 import { injectModals } from './src/modules/modals.js';
-import { writeToData } from './src/modules/cardsdata.js';
+import { writeToData, downloadDB, uploadDB, data } from './src/modules/handlerdata.js';
 import { handleFilterChange } from './src/modules/cardsfilter.js';
 import { handlePreviewChange } from './src/modules/previewcard.js';
 
@@ -18,7 +18,6 @@ async function getLastCommit() {
     }
 };
 
-/* importCSV(); */
 getLastCommit();
 injectModals();
 
@@ -40,3 +39,21 @@ document.querySelectorAll('[id*="inputGame"]').forEach(input => {
 });
 
 document.getElementById('year-filter').addEventListener('change', handleFilterChange);
+
+document.getElementById('downloadDB').addEventListener('click', () => {
+    downloadDB();
+});
+
+
+let avisoUpload = false;
+document.getElementById('uploadDB').addEventListener('click', () => {
+    if (data.length > 0 && avisoUpload == false) {
+        modalAvisoUpload.showModal();
+        avisoUpload = true;
+    } else {
+        document.getElementById('fileInputHandler').click();
+    }
+});
+document.getElementById('fileInputHandler').addEventListener('change', (event) => {
+    uploadDB(event);
+})

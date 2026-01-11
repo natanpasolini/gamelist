@@ -8,27 +8,6 @@ export async function importCSV() {
     processCSV(data);
 }
 
-function processCSV(text) {
-    const lines = text.split("\n").filter(line => line.trim() !== "");
-
-    const gameList = lines.slice(1).map(line => {
-        const indexes = line.replace(/\r/g, "").split(",");
-
-        return {
-            title: indexes[0],
-            platform: indexes[1],
-            achievements: indexes[2] || "N/A",
-            maxachievements: indexes[3] || "N/A",
-            hours: indexes[4],
-            score: indexes[5] || "N/A",
-            year: indexes[6],
-            steamid: indexes[7]
-        };
-    });
-    gameList.reverse();
-    renderCards(gameList);
-}
-
 export function buildCard(title,year,achievements,maxachievements,hours,score,imglink,golden) {
     hours += 'h';
     let textColor = 'white';
@@ -36,6 +15,9 @@ export function buildCard(title,year,achievements,maxachievements,hours,score,im
     if (Number(achievements) < 0 || Number(maxachievements) <= 0) {
         achievements = 'N/A';
     } else {
+        if (achievements == maxachievements) {
+            golden = true;
+        }
         achievements += '/' + maxachievements;
     }
     if (golden == true) {
