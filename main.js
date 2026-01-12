@@ -1,5 +1,5 @@
 import { injectModals } from './src/modules/modals.js';
-import { writeToData, downloadDB, uploadDB, data } from './src/modules/handlerdata.js';
+import { writeToData, downloadDB, uploadDB, loadFromLocalStorage, data } from './src/modules/handlerdata.js';
 import { handleFilterChange } from './src/modules/cardsfilter.js';
 import { handlePreviewChange } from './src/modules/previewcard.js';
 import { attPatches } from './src/modules/patchnotes.js';
@@ -84,3 +84,4 @@ document.getElementById('fileInputHandler').addEventListener('change', (event) =
 getLastCommit();
 injectModals();
 attPatches();
+loadFromLocalStorage();

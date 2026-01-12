@@ -6,12 +6,15 @@ const modalGuia = `
                 <h1 class="font-silkscreen font-bold text-lg">Guia do Usuário</h1>
             </div>
             <span class="w-full h-[2px] rounded-full bg-neutral-500"></span>
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 overflow-y-scroll">
                 <p class="font-pixelify-sans text-md">
-                    Você pode criar seus proprios cards de jogo clicando no <b>novo jogo</b> (desaparece após adicionar um jogo) ou no botão em formato de cruz na toolbar.
+                    O card de novo jogo desaparece após criar um gamecard, porém há um botão na toolbar para criar outros.
                 </p>
                 <p class="font-pixelify-sans text-md">
-                    O template dos gamecards consiste em uma imagem (colocada através de um url), titulo, ano (fica a sua escolha ser ano em que jogou ou ano do jogo), conquistas (alcanças e maximas), horas de jogo e por fim, uma nota.
+                    A toolbar é sua amiga! nela você encontrará um botão para criar, deletar e editar cards, um botão para ver os patch notes, o botão para esse guia e mais!
+                </p>
+                <p class="font-pixelify-sans text-md">
+                    Os gamecards permitem imagens via link (gifs também funcionam).
                 </p>
                 <div class="grid grid-cols-2 w-full">
                     <div class="flex flex-col items-start pt-1 border-2 border-black gap-1 bg-black">
@@ -52,16 +55,13 @@ const modalGuia = `
                         </span>
                     </div>
                 </div>
-                <p class="font-pixelify-sans text-md">
-                    Você pode salvar seus cards apertando o botão de download na toolbar. E pode carregar apertando o botão de upload.
-                </p>
                 <div class="alert alert-info">
                     <i class="hn hn-info-circle-solid"></i>
-                    <span class="font-silkscreen text-xs">Esta é uma versão beta incompleta para testes, espere erros!</span>
+                    <span class="font-silkscreen text-xs">Você pode exportar sua database pela toolbar!</span>
                 </div>
                 <div class="alert alert-warning">
                     <i class="hn hn-exclamation-triangle-solid"></i>
-                    <span class="font-silkscreen text-xs">Recarregar a página exclui TODOS os seus cards!</span>
+                    <span class="font-silkscreen text-xs">Esta é uma versão beta, e portanto, está sujeita a mudanças. É possivel que seu save corrompa em versões futuras!</span>
                 </div>
             </div>
         </div>

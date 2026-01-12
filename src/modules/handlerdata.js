@@ -16,7 +16,6 @@ export function writeToData(t, y, a, ma, h, s, i) {
 
     data.push(newEntry);
     
-    console.log(data);
     sendCardData(data);
 };
 
@@ -42,6 +41,7 @@ function sendCardData(data) {
     if (cardsCreated > 0) {
         document.getElementById('newGameCard').classList.add('hidden');
     };
+    saveToLocalStorage();
     buildCard(title,year,achievements,maxachievements,hours,score,imglink,golden);
 };
 
@@ -107,6 +107,7 @@ export function uploadDB(event) {
 
             console.log("Upload concluído com sucesso!");
             document.getElementById('newGameCard').classList.add('hidden');
+            saveToLocalStorage();
             
             // Resetar input
             fileInput.value = ''; 
@@ -137,4 +138,34 @@ export function refreshData() {
     } else {
         document.getElementById('newGameCard').classList.remove('hidden');
     };
+    saveToLocalStorage();
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('gamelist_db', JSON.stringify(data));
+}
+
+export function loadFromLocalStorage() {
+    const savedData = localStorage.getItem('gamelist_db');
+    if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        data.length = 0;
+        data.push(...parsedData);
+        data.forEach(game => {
+                cardsCreated += 1;
+                cardsID += 1;
+                buildCard(
+                    game.title, 
+                    game.year, 
+                    game.achievements, 
+                    game.maxachievements, 
+                    game.hours, 
+                    game.score, 
+                    game.imglink
+                );
+            });
+        refreshData();
+        return true;
+    }
+    return false;
 }

@@ -1,5 +1,13 @@
 const patchNotes = [
     {
+        version: '<b>BETA</b> 1.2.0',
+        vs: 'b120',
+        changes: [
+            { type: 'FEATURE', text: '<b>Save Local:</b> seus cards agora são salvos automaticamente no seu navegador.'},
+            { type: 'UPDATE', text: 'Toolbar modificada para um visual minimalista (mobile será alterado no futuro).'}
+        ]
+    },
+    {
         version: '<b>BETA</b> 1.1.0',
         vs: 'b110',
         changes: [
