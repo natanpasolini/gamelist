@@ -33,7 +33,7 @@
                 <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="updateMouseState('trash')">
                     <i class="hn hn-trash-alt-solid text-white text-[24px]" id="mousetrash"></i>
                 </div>
-                <div class="opacity-20 flex items-center justify-center rounded-full w-[36px] h-[36px]">
+                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalCardEditor.showModal()">
                     <i class="hn hn-pencil-solid text-white text-[24px]"></i>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                     <div></div>
                 </div>
                 <div class="w-[295px] lg:w-[400px]">
-                    <form class="flex flex-col gap-4 h-full"  id="cardCreator">
+                    <form class="flex flex-col gap-4 h-full"  id="cardCreator"> <!-- id para puxar atualização de preview -->
                         <h1 class="text-white font-silkscreen">Configurações</h1>
                         <div class="flex flex-row gap-4 rounded w-full">
                             <input type="text" required placeholder="TITULO" id="inputGameTitle" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
@@ -221,7 +221,68 @@
                     </form>
                 </div>
             </div>
-            
+        </div>
+    </dialog>
+
+
+    <!-- editor de cards -->
+     <dialog class="modal" id="modalCardEditor">
+        <div class="flex flex-col bg-neutral-800 border border-neutral-700 rounded-lg p-5 relative">
+            <i class="hn hn-window-close-solid text-red-600 absolute top-2 right-2 hover:text-red-800 cursor-pointer" onclick="modalCardEditor.close()"></i>
+            <div class="flex flex-col gap-2 mb-2">
+                <div class="font-silkscreen text-lg">EDITOR</div>
+                <span class="w-full h-[2px] gamecard-bg-basic rounded-full"></span>
+            </div>
+                <div class="w-[295px] lg:w-[400px]">
+                    <form class="flex flex-col gap-4 h-full">
+                        <h1 class="text-white font-silkscreen">Configurações</h1>
+                        <div class="flex flex-row gap-4 rounded w-full">
+                            <input type="text" required placeholder="TITULO" id="inputGameTitle" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
+                            <input type="number" required min="1900" max="2099"  placeholder="ANO" id="inputGameYear" class="min-w-0 w-[20%] border-b border-white font-silkscreen text-white outline-none">
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <h1 class="text-white font-silkscreen">CONQUISTAS</h1>
+                            <div class="flex flex-row gap-4 w-full">
+                                <input type="number" placeholder="ALCANÇADAS" id="inputGameAch" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
+                                <input type="number" placeholder="TOTAL" id="inputGameMaxAch" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <h1 class="text-white font-silkscreen">HORAS & NOTA</h1>
+                            <div class="flex flex-row gap-4 w-full">
+                                <input type="number" required min="1" max="100000" placeholder="HORAS" id="inputGameHours" class="flex-1 min-w-0 border-b border-white font-silkscreen text-white outline-none">
+                                <div class="flex items-center rounded text-white relative w-[170px] group">
+                                    <select id="inputGameScore" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
+                                        <option value="N/A" disabled selected>N/A</option>
+                                        <option value="F">F</option>
+                                        <option value="D">D</option>
+                                        <option value="C">C</option>
+                                        <option value="B">B</option>
+                                        <option value="A">A</option>
+                                        <option value="S">S</option>
+                                        <option value="SS">SS</option>
+                                        <option value="SSS">SSS</option>
+                                    </select>
+                                    <i class="hn hn-chevron-up absolute select-none z-0 right-3 text-[12px] peer-focus:rotate-180 transform transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <h1 class="text-white font-silkscreen">IMAGEM</h1>
+                            <div class="flex flex-row gap-4 w-full">
+                                <input type="text" placeholder="link da imagem" id="inputGameImg" class="min-w-0 w-full border-b border-white font-silkscreen text-white outline-none">
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center h-full">
+                            <input type="submit" value="Criar Card" class="btn gamecard-bg-basic gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95"></input>
+                        </div>
+                        <div class="alert alert-warning">
+                            <i class="hn hn-exclamation-triangle-solid"></i>
+                            <span class="font-silkscreen">Não há um sistema de edição de cards nesta versão!</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </dialog>
 

@@ -24,22 +24,6 @@ function updateMouseState(type) {
 window.cardFunctions = cardFunctions;
 window.updateMouseState = updateMouseState;
 
-/* Pegar commit */
-async function getLastCommit() {
-    try {
-        const url = 'https://api.github.com/repos/natanpasolini/gamelist/commits?per_page=1';
-        const feed = await fetch(url);
-        const data = await feed.json();
-        
-        if (data && data.length > 0) {
-            const shrink = data[0].sha.substring(0, 7);
-            document.getElementById('commit').textContent = `#${shrink}`;
-        }
-    } catch (error) {
-        console.error('Erro ao buscar commit:', error);
-    }
-};
-
 /* Atualizar preview */
 document.querySelectorAll('[id*="inputGame"]').forEach(input => {
     input.addEventListener('change', handlePreviewChange);
