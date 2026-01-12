@@ -65,7 +65,6 @@ document.getElementById('fileInputHandler').addEventListener('change', (event) =
 })
 
 /* Por ser um module, roda quando carrega a página */
-getLastCommit();
 injectModals();
 attPatches();
 loadFromLocalStorage();
