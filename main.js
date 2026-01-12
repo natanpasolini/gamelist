@@ -1,9 +1,15 @@
 import { injectModals } from './src/modules/modals.js';
-import { writeToData, downloadDB, uploadDB, loadFromLocalStorage, data } from './src/modules/handlerdata.js';
+import { downloadDB, uploadDB, loadFromLocalStorage, refreshData, data } from './src/modules/handlerData.js';
 import { handleFilterChange } from './src/modules/cardsfilter.js';
-import { handlePreviewChange } from './src/modules/previewcard.js';
 import { attPatches } from './src/modules/patchnotes.js';
-import { cardFunctions } from './src/modules/gamecards.js';
+import { cardCreator } from './src/modules/cardCreator.js';
+import { cardEditor } from './src/modules/cardEditor.js';
+
+/* Sem isso não roda as funções */
+window.cardFunctions = cardFunctions;
+window.updateMouseState = updateMouseState;
+window.cardCreator = cardCreator;
+window.cardEditor = cardEditor;
 
 /* mousestate */
 export let mouseState = 'default';
@@ -14,34 +20,33 @@ function updateMouseState(type) {
         mouseState = 'default';
         document.body.style.cursor = 'default';
     } else {
+        if (mouseState != 'default') {
+            document.getElementById(`mouse${mouseState}`).style.color = 'white';
+        }
         mouseState = type;
         document.getElementById(`mouse${type}`).style.color = 'red';
         document.body.style.cursor = `url('./src/imgs/cursor-${type}.svg'), crosshair`;
     }
 }
 
-/* Sem isso não roda as funções */
-window.cardFunctions = cardFunctions;
-window.updateMouseState = updateMouseState;
-
-/* Atualizar preview */
-document.querySelectorAll('[id*="inputGame"]').forEach(input => {
-    input.addEventListener('change', handlePreviewChange);
-});
-
-/* Criador de cards */
-document.getElementById('cardCreator').addEventListener('submit', (event) => {
-    event.preventDefault();
-    let t = document.getElementById('inputGameTitle').value;
-    let y = document.getElementById('inputGameYear').value;
-    let a = document.getElementById('inputGameAch').value;
-    let ma = document.getElementById('inputGameMaxAch').value;
-    let h = document.getElementById('inputGameHours').value;
-    let s = document.getElementById('inputGameScore').value;
-    let i = document.getElementById('inputGameImg').value;
-    writeToData(t,y,a,ma,h,s,i);
-    event.target.reset();
-});
+function cardFunctions(event) {
+    const elementoAtivo = event.currentTarget;
+    if (mouseState == 'trash') {
+        elementoAtivo.remove();
+        const title = elementoAtivo.querySelector('#gameTitle').innerText;
+        let index = -1;
+        for (let i = 0; i < data.length; i ++) {
+            if (data[i].title == title) {
+                index = i;
+                break;
+            }
+        };
+        data.splice(index, 1);
+        refreshData();
+    } else if (mouseState == 'edit') {
+        cardEditor(event);
+    }
+}
 
 /* Filtros */
 document.getElementById('year-filter').addEventListener('change', handleFilterChange);

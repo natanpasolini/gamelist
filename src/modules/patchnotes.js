@@ -1,5 +1,13 @@
 const patchNotes = [
     {
+        version: '<b>BETA</b> 2.0.0',
+        vs: 'b200',
+        changes: [
+            { type: 'FEATURE', text: '<b>Editor</b> seus cards agora podem ser editados.'},
+            { type: 'UPDATE', text: 'Preview de cards agora atualiza conforme você digita'}
+        ]
+    },
+    {
         version: '<b>BETA</b> 1.2.0',
         vs: 'b120',
         changes: [

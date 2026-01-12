@@ -4,6 +4,7 @@ export const data = [
 ];
 
 export function writeToData(t, y, a, ma, h, s, i) {
+    const uniqueId = Date.now() + i;
     const newEntry = {
         title: t,
         year: y,
@@ -11,7 +12,8 @@ export function writeToData(t, y, a, ma, h, s, i) {
         maxachievements: ma,
         hours: h,
         score: s,
-        imglink: i
+        imglink: i,
+        uid: uniqueId
     };
 
     data.push(newEntry);
@@ -24,6 +26,7 @@ let cardsCreated = 0;
 
 function sendCardData(data) {
     const id = cardsID + 1;
+    const uid = data[id].uid;
     const title = data[id].title;
     const year = data[id].year;
     const achievements = data[id].achievements;
@@ -42,7 +45,7 @@ function sendCardData(data) {
         document.getElementById('newGameCard').classList.add('hidden');
     };
     saveToLocalStorage();
-    buildCard(title,year,achievements,maxachievements,hours,score,imglink,golden);
+    buildCard(uid,title,year,achievements,maxachievements,hours,score,imglink,golden);
 };
 
 export function downloadDB() {
@@ -85,16 +88,29 @@ export function uploadDB(event) {
                     }
                 })
             }
+
+            // Deleta os cards antigos
+            document.querySelectorAll('[id*="gamecard"]').forEach(card => {
+                card.remove();
+            });
             
             // Substituir array
             data.length = 0; // Limpa array
             data.push(...importedData); // Adiciona os novos dados
 
+            // Criar UniqueID
+            for (let i = 0; i < data.length; i++) {
+                const uniqueId = Date.now() + i;
+                data[i].uid = uniqueId;
+            }
+
             // Cria todos os cards novos
+            refreshData();
             data.forEach(game => {
                 cardsCreated += 1;
                 cardsID += 1;
                 buildCard(
+                    game.uid,
                     game.title, 
                     game.year, 
                     game.achievements, 
@@ -122,19 +138,34 @@ export function uploadDB(event) {
 }
 
 export function refreshData() {
-    console.log(cardsCreated, cardsID);
     // Limpar variaveis
     cardsCreated = 0;
     cardsID = -1;
 
-    // Cria todos os cards novos
+    document.querySelectorAll('[id*="gamecard"]').forEach(card => {
+        card.remove();
+    });
+
+    // Arruma as variaveis novas
     for (let i = 0; i < data.length; i++) {
         cardsCreated += 1;
         cardsID += 1;
-    }
-    console.log(cardsCreated, cardsID);
+    }    
+
     if (cardsCreated > 0) {
         document.getElementById('newGameCard').classList.add('hidden');
+        data.forEach(game => {
+            buildCard(
+                game.uid,
+                game.title, 
+                game.year, 
+                game.achievements, 
+                game.maxachievements, 
+                game.hours, 
+                game.score, 
+                game.imglink
+            );
+        });
     } else {
         document.getElementById('newGameCard').classList.remove('hidden');
     };
@@ -151,10 +182,18 @@ export function loadFromLocalStorage() {
         const parsedData = JSON.parse(savedData);
         data.length = 0;
         data.push(...parsedData);
+
+        // Criar UniqueID
+        for (let i = 0; i < data.length; i++) {
+            const uniqueId = Date.now() + i;
+            data[i].uid = uniqueId;
+        }
+
         data.forEach(game => {
                 cardsCreated += 1;
                 cardsID += 1;
                 buildCard(
+                    game.uid,
                     game.title, 
                     game.year, 
                     game.achievements, 

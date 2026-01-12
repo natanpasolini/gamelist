@@ -1,8 +1,9 @@
 import { useObserver } from "./observer.js";
 import { mouseState } from "../../main.js";
-import { data, refreshData } from "./handlerdata.js";
+import { data, refreshData } from "./handlerData.js";
+import { cardEditor } from "./cardEditor.js";
 
-export function buildCard(title,year,achievements,maxachievements,hours,score,imglink,golden) {
+export function buildCard(uid,title,year,achievements,maxachievements,hours,score,imglink,golden) {
     hours += 'h';
     let textColor = 'white';
     let bgColor = 'basic';
@@ -19,7 +20,7 @@ export function buildCard(title,year,achievements,maxachievements,hours,score,im
         bgColor = 'gold';
     }
     const templateHtml = `
-    <div class="flex flex-row justify-center items-center w-full gap-4" id="gamecard-${year}-${score}" onclick="cardFunctions(event)">
+    <div class="flex flex-row justify-center items-center w-full gap-4" id="gamecard" data-uid="${uid}" onclick="cardFunctions(event)">
                 <div class="hover-3d">
                     <figure>
                         <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md w-[295px] md:w-[350px] xl:w-[400px] gamecard-bg-${bgColor} backdrop-blur-md border gamecard-border-${bgColor}">
@@ -81,20 +82,3 @@ export function buildCard(title,year,achievements,maxachievements,hours,score,im
     document.querySelector('#gamelist').insertAdjacentHTML('afterbegin', templateHtml);
     useObserver();
 };
-
-export function cardFunctions(event) {
-    const elementoAtivo = event.currentTarget;
-    if (mouseState == 'trash') {
-        elementoAtivo.remove();
-        const title = elementoAtivo.querySelector('#gameTitle').innerText;
-        let index = -1;
-        for (let i = 0; i < data.length; i ++) {
-            if (data[i].title == title) {
-                index = i;
-                break;
-            }
-        };
-        data.splice(index, 1);
-        refreshData();
-    }
-}
