@@ -106,20 +106,6 @@ export function uploadDB(event) {
 
             // Cria todos os cards novos
             refreshData();
-            data.forEach(game => {
-                cardsCreated += 1;
-                cardsID += 1;
-                buildCard(
-                    game.uid,
-                    game.title, 
-                    game.year, 
-                    game.achievements, 
-                    game.maxachievements, 
-                    game.hours, 
-                    game.score, 
-                    game.imglink
-                );
-            });
 
             console.log("Upload concluído com sucesso!");
             document.getElementById('newGameCard').classList.add('hidden');

@@ -6,7 +6,8 @@ const patchNotes = [
             { type: 'UPDATE', text: 'Você pode colocar uma casa decimal nas horas de jogo ex: 10,1h'},
             { type: 'BUGFIX', text: 'Conquistas alcançadas não podem mais ser nulas.'},
             { type: 'BUGFIX', text: 'Editor não permite conquistas alcançadas maiores que o máximo.'},
-            { type: 'BUGFIX', text: 'Imagem do placeholder desaparecendo.'}
+            { type: 'BUGFIX', text: 'Imagem do placeholder desaparecendo.'},
+            { type: 'BUGFIX', text: 'Upload gerando cartões duplicados.'}
         ]
     },
     {
