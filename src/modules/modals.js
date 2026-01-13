@@ -33,24 +33,24 @@ const modalGuia = `
                     </div>
                     <div class="flex justify-center h-20">
                         <div class="p-2 flex justify-center items-center w-full border-2 border-black score-S">
-                            <span class="text-3xl font-pixelify-sans select-none">
+                            <span class="text-3xl font-pixelify-sans select-none text-shadow-md/60">
                                 NOTA
                             </span>
                         </div>
                     </div>
                 </div>
                 <p class="font-pixelify-sans text-md">
-                    As notas vão de F a SSS, sendo F a pior.
+                    JACKPOT! As notas vão de D a SSS, sendo D a pior.
                 </p>
                 <div class="flex justify-center items-center gap-5 w-full">
-                    <div class="p-2 w-full flex justify-center items-center border-2 border-black score-F">
-                        <span class="text-3xl font-pixelify-sans select-none">
-                            F
+                    <div class="p-2 w-full flex justify-center items-center border-2 border-black score-D">
+                        <span class="text-3xl font-pixelify-sans select-none text-shadow-md/60">
+                            D
                         </span>
                     </div>
                     <i class="hn hn-arrow-right text-white text-3xl"></i>
                     <div class="p-2 w-full flex justify-center items-center border-2 border-black score-SSS">
-                        <span class="text-3xl font-pixelify-sans select-none">
+                        <span class="text-3xl font-pixelify-sans select-none text-shadow-md/60">
                             SSS
                         </span>
                     </div>

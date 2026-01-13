@@ -1,5 +1,13 @@
 const patchNotes = [
     {
+        version: '<b>BETA</b> 2.2.0',
+        vs: 'b220',
+        changes: [
+            { type: 'UPDATE', text: '<b>Notas:</b> Novas cores de notas, nota F removida.'},
+            { type: 'UPDATE', text: '<b>Gamecards:</b> Nova cor dourada e brilho de fundo.'}
+        ]
+    },
+    {
         version: '<b>BETA</b> 2.0.1',
         vs: 'b201',
         changes: [
@@ -67,7 +75,7 @@ export function attPatches() {
                             <div class="flex justify-center items-center border gamecard-border-basic gamecard-bg-basic shrink-0 font-silkscreen text-[12px] px-1">
                                 ${change.type}
                             </div>
-                            <p class="font-pixelify-sans text-sm flex-1">
+                            <p class="font-silkscreen text-sm flex-1">
                                 ${change.text}
                             </p>
                         </div>`;

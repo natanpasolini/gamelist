@@ -32,7 +32,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                         TÍTULO
                                     </h1>
                                 </div>
-                                <div class="grid grid-cols-2 w-full">
+                                <div class="grid grid-cols-2 w-full drop-shadow-lg/100">
                                     <div class="flex flex-col items-start pt-1 border-2 border-black gap-1 bg-black">
                                         <div class="flex justify-start items-center pl-2 gap-2">
                                             <i class="hn hn-trophy-solid text-yellow-300 text-3xl"></i>
@@ -48,8 +48,8 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                         </div>
                                     </div>
                                     <div class="flex justify-center h-20">
-                                        <div class="p-2 flex justify-center items-center w-full h-full border-2 border-black" id="previewcardScoreBG">
-                                            <span class="text-3xl font-pixelify-sans select-none text-center" id="previewcardScore">
+                                        <div class="p-2 flex justify-center items-center w-full h-full border-2 border-black score-N/A" id="previewcardScoreBG">
+                                            <span class="text-3xl font-pixelify-sans select-none text-center text-shadow-md/60" id="previewcardScore">
                                                 NOTA
                                             </span>
                                         </div>
@@ -87,8 +87,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                 <input type="number" step="0.1" required min="1" max="100000" placeholder="HORAS" id="inputGameHours" class="flex-1 min-w-0 border-b border-white font-silkscreen text-white outline-none">
                                 <div class="flex items-center rounded text-white relative w-[170px] group">
                                     <select id="inputGameScore" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
-                                        <option value="N/A" disabled selected>N/A</option>
-                                        <option value="F">F</option>
+                                        <option value="N/A" disabled selected>NOTA</option>
                                         <option value="D">D</option>
                                         <option value="C">C</option>
                                         <option value="B">B</option>

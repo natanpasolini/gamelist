@@ -7,6 +7,7 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
     hours += 'h';
     let textColor = 'white';
     let bgColor = 'basic';
+    let dropShadow = '';
     if (Number(achievements) < 0 || Number(maxachievements) <= 0) {
         achievements = 'N/A';
     } else {
@@ -18,9 +19,10 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
     if (golden == true) {
         textColor = 'gold';
         bgColor = 'gold';
+        dropShadow = 'animate-drop-shadow-glow-gold';
     }
     const templateHtml = `
-    <div class="flex flex-row justify-center items-center w-full gap-4" id="gamecard" data-uid="${uid}" onclick="cardFunctions(event)">
+    <div class="flex flex-row justify-center items-center w-full gap-4 ${dropShadow}" id="gamecard" data-uid="${uid}" onclick="cardFunctions(event)">
                 <div class="hover-3d">
                     <figure>
                         <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md w-[295px] md:w-[350px] xl:w-[400px] gamecard-bg-${bgColor} backdrop-blur-md border gamecard-border-${bgColor}">
@@ -39,8 +41,8 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
                                 </div>
                             </div>
                             <div class="flex flex-col justify-center items-center h-full">
-                                <div class="bg-transparent p-1 w-full flex justify-center items-center h-[60px]">
-                                    <h1 class="text-${textColor} text-center text-xl font-silkscreen line-clamp-2" id="gameTitle">
+                                <div class="bg-transparent pb-2 w-full flex justify-center items-center h-[60px]">
+                                    <h1 class="text-${textColor} text-center text-xl font-silkscreen line-clamp-2 text-shadow-[2px_2px_4px_rgba(0,0,0,1)]" id="gameTitle">
                                         ${title}
                                     </h1>
                                 </div>
@@ -61,7 +63,7 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
                                     </div>
                                     <div class="flex justify-center h-20">
                                         <div class="p-2 flex justify-center items-center w-full border-2 border-black score-${score}">
-                                            <span class="text-3xl font-pixelify-sans select-none">
+                                            <span class="text-3xl font-pixelify-sans select-none text-shadow-lg/60">
                                                 ${score}
                                             </span>
                                         </div>

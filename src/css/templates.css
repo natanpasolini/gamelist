@@ -7,12 +7,12 @@
 }
 
 .gamecard-bg-gold {
-    background: radial-gradient(
-    circle, 
-    rgba(218, 165, 32, 0.7) 0%,  
-    rgba(184, 134, 11, 0.7) 50%,  
-    rgba(101, 67, 33, 0.3) 100%  
-);
+    background: linear-gradient(
+    135deg, 
+    #b8860b 0%, 
+    #dfbe02 50%, 
+    #856404 100%
+  );
 }
 
 .gamecard-border-basic {
@@ -20,68 +20,47 @@
 }
 
 .gamecard-border-gold {
-    border-color: #ffd700;
+  border-color: black;
 }
 
 .text-gold {
     color: #ffd700;
 }
 
-.platform-steam {
-    background: linear-gradient(180deg,rgba(10, 27, 64, 1) 0%, rgba(20, 45, 96, 1) 52%, rgba(19, 129, 178, 1) 100%);
-}
-
-.platform-epic {
-    background: linear-gradient(180deg,rgba(26, 26, 26, 1) 0%, rgba(56, 56, 56, 1) 100%);
-}
-
-.platform-uplay {
-    background: linear-gradient(180deg,rgba(38, 79, 87, 1) 0%, rgba(89, 141, 171, 1) 100%);
-}
-
-.platform-emulador {
-    background: linear-gradient(180deg,rgba(92, 4, 112, 1) 0%, rgba(156, 39, 176, 1) 100%);
-}
-.platform-gp {
-    background: linear-gradient(180deg,rgba(0, 143, 36, 1) 0%, rgba(0, 84, 21, 1) 100%);
-}
-
-.platform-switch {
-    background: linear-gradient(180deg,rgba(255, 0, 0, 1) 0%, rgba(128, 0, 0, 1) 100%);
-}
-
 .score-N\/A {
     background: black;
 }
 
-.score-F {
-    background: #546e7a;
-}
-
 .score-D {
-    background: #a1887f;
+  background: radial-gradient(circle, #D1D1D1 0%, #808080 60%, #404040 100%);
 }
 
 .score-C {
-    background: #00e676;
+  background: radial-gradient(circle, #B0C4DE 0%, #708090 60%, #2F4F4F 100%);
 }
 
 .score-B {
-    background: #1de9b6;
+  background: radial-gradient(circle, #A1C4FD 0%, #4A6984 70%, #1E2F3E 100%);
 }
 
 .score-A {
-    background: #2979ff;
+  background: radial-gradient(circle, #00D2FF 0%, #0084A3 50%, #003D4D 100%);
 }
 
 .score-S {
-    background: #f50057;
+  background: radial-gradient(circle, #D4AF37 0%, #B8860B 55%, #463500 100%);
 }
 
 .score-SS {
-    background: #ff6d00;
+  background: radial-gradient(circle, #FF9100 0%, #CC7000 50%, #663300 100%);
 }
 
 .score-SSS {
-    background: #ffd700;
+  background: radial-gradient(circle, #FF4500 0%, #B32400 50%, #300000 100%);
+  animation: sss-radial-pulse 2s infinite ease-in-out;
+}
+
+@keyframes sss-radial-pulse {
+  0%, 100% { filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 0.4)); opacity: 1;}
+  50% { filter: drop-shadow(0px 0px 20px rgba(255, 0, 0, 0.8)); opacity: 0.9;}
 }
