@@ -15,6 +15,8 @@ window.cardEditor = cardEditor;
 export let mouseState = 'default';
 
 function updateMouseState(type) {
+    let coords = '0 0'
+    let iconColor = 'red';
     if (mouseState == type) {
         document.getElementById(`mouse${type}`).style.color = 'white';
         mouseState = 'default';
@@ -24,8 +26,15 @@ function updateMouseState(type) {
             document.getElementById(`mouse${mouseState}`).style.color = 'white';
         }
         mouseState = type;
-        document.getElementById(`mouse${type}`).style.color = 'red';
-        document.body.style.cursor = `url('./src/imgs/cursor-${type}.svg'), crosshair`;
+        if (type == 'edit') {
+            coords = '0 32';
+            iconColor = 'cyan';
+        } else if (type == 'trash') {
+            coords = '0 0';
+            iconColor = 'red';
+        }
+        document.getElementById(`mouse${type}`).style.color = `${iconColor}`;
+        document.body.style.cursor = `url('./src/imgs/cursor-${type}.svg') ${coords}, crosshair`;
     }
 }
 

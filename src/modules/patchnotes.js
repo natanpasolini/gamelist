@@ -1,5 +1,13 @@
 const patchNotes = [
     {
+        version: '<b>BETA</b> 2.2.1',
+        vs: 'b221',
+        changes: [
+            { type: 'UPDATE', text: '<b>TOOLBAR:</b> Novas cores do modo selecionado (apagar/editar).'},
+            { type: 'BUGFIX', text: '<b>EDITOR:</b> Cursor de lápis posicionado incorretamente.'}
+        ]
+    },
+    {
         version: '<b>BETA</b> 2.2.0',
         vs: 'b220',
         changes: [
@@ -11,11 +19,10 @@ const patchNotes = [
         version: '<b>BETA</b> 2.0.1',
         vs: 'b201',
         changes: [
-            { type: 'UPDATE', text: 'Você pode colocar uma casa decimal nas horas de jogo ex: 10,1h'},
-            { type: 'BUGFIX', text: 'Conquistas alcançadas não podem mais ser nulas.'},
-            { type: 'BUGFIX', text: 'Editor não permite conquistas alcançadas maiores que o máximo.'},
-            { type: 'BUGFIX', text: 'Imagem do placeholder desaparecendo.'},
-            { type: 'BUGFIX', text: 'Upload gerando cartões duplicados.'}
+            { type: 'UPDATE', text: '<b>EDITOR:</b> Você pode colocar uma casa decimal nas horas de jogo ex: 10,1h.'},
+            { type: 'BUGFIX', text: '<b>CRIADOR:</b> Conquistas alcançadas não podem mais ser nulas. Imagem do placeholder não desaparece mais.'},
+            { type: 'BUGFIX', text: '<b>EDITOR:</b> não permite conquistas alcançadas maiores que o máximo.'},
+            { type: 'BUGFIX', text: '<b>UPLOAD:</B> gerando cartões duplicados.'}
         ]
     },
     {
