@@ -49,8 +49,7 @@ export function cardEditor(event) {
                                 <input type="number" required step="0.1" min="1" max="100000" placeholder="HORAS" id="inputGameHours" class="flex-1 min-w-0 border-b border-white font-silkscreen text-white outline-none">
                                 <div class="flex items-center rounded text-white relative w-[170px] group">
                                     <select id="inputGameScore" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
-                                        <option value="N/A" disabled selected>N/A</option>
-                                        <option value="F">F</option>
+                                        <option value="N/A" disabled selected>NOTA</option>
                                         <option value="D">D</option>
                                         <option value="C">C</option>
                                         <option value="B">B</option>
