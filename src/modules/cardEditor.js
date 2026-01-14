@@ -21,6 +21,7 @@ export function cardEditor(event) {
     const maxach = cardData.maxachievements;
     const score = cardData.score;
     const imglink = cardData.imglink;
+    const imgstyle = cardData.imgstyle;
     const rgb = cardData.background;
 
     const cardEditorHtml = `<dialog class="modal" id="modalCardEditor">
@@ -80,7 +81,7 @@ export function cardEditor(event) {
                                 <input type="text" placeholder="link" id="inputGameImg" class="min-w-0 flex-1 border-b border-white font-silkscreen text-white outline-none">
                                 <div class="flex flex-1 items-center rounded text-white relative min-w-[100px] max-w-[170px] group">
                                     <select id="inputGameImgStyle" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
-                                        <option value="object-fill" disabled selected>ESTILO</option>
+                                        <option value="" disabled selected>ESTILO</option>
                                         <option value="object-fill">PREENCHER</option>
                                         <option value="object-cover">COBRIR</option>
                                         <option value="object-fit">CORTAR</option>
@@ -90,7 +91,7 @@ export function cardEditor(event) {
                                 </div>
                                 <div class="flex flex-1 items-center rounded text-white relative min-w-[100px] max-w-[170px] group hidden">
                                     <select id="inputGameImgPos" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
-                                        <option value="object-center" disabled selected>POS</option>
+                                        <option value="" disabled selected>POS</option>
                                         <option value="object-left">ESQUERDA</option>
                                         <option value="object-center">CENTRO</option>
                                         <option value="object-right">DIRETA</option>
@@ -120,6 +121,11 @@ export function cardEditor(event) {
     document.getElementById('inputGameGreen').value = rgb[1];
     document.getElementById('inputGameBlue').value = rgb[2];
     document.getElementById('inputGameImg').value = imglink;
+    document.getElementById('inputGameImgStyle').value = imgstyle[0];
+    document.getElementById('inputGameImgPos').value = imgstyle[1];
+
+    let inputImgPos = document.getElementById('inputGameImgPos');
+    if (imgstyle[0] == 'object-cover' || imgstyle[0] == 'object-contain') inputImgPos.parentElement.classList.remove('hidden'); else inputImgPos.parentElement.classList.add('hidden');
 
     previewNewColor();
 
