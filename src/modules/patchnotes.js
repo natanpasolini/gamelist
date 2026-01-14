@@ -3,7 +3,7 @@ const patchNotes = [
         version: '<b>BETA</b> 3.0.0',
         vs: 'b300',
         changes: [
-            { type: 'FEATURE', text: '<b>VERSO:</b> Agora os cartões tem um verso, onde pode ser adicionado uma descrição ao gamecard.'},
+            { type: 'FEATURE', text: '<b>VERSO:</b> Agora os cartões tem um verso, onde fica seu id unico, a data de criação e uma descrição personalizada! Basta clicar num cartão para virar.'},
             { type: 'UPDATE', text: '<b>GAMECARDS:</b> Novo design frontal dos gamecards.'}
         ]
     },
@@ -103,7 +103,7 @@ export function attPatches() {
         patchNotesBlocks.innerHTML += templateBlock;
         const changesBlock = document.getElementById(`changes-${vs}`)
         patch.changes.forEach(change => {
-            const templateChanges = `<div class="flex flex-row items-center gap-2">
+            const templateChanges = `<div class="flex flex-row items-start gap-2">
                             <div class="flex justify-center items-center border gamecard-border-basic gamecard-bg-basic shrink-0 font-silkscreen text-[12px] px-1">
                                 ${change.type}
                             </div>

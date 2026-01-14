@@ -115,11 +115,7 @@ function previewCardChange(title,year,achievements,hours,score,img,rgb) {
     const b = rgb.b;
     const g = rgb.g;
     const previewStatsBG = document.getElementById('previewcardStats');
-
-    const previewDesc = document.getElementById('previewcardDesc');
-    const inputDesc = document.getElementById('inputGameDesc');
-
-    previewDesc.innerHTML = inputDesc.value;
+    const previewVerso = document.getElementById('versoCreator');
 
     previewTitle.innerHTML = title;
     previewYear.innerHTML = year;
@@ -145,10 +141,15 @@ function previewCardChange(title,year,achievements,hours,score,img,rgb) {
     const previewImgPos = document.getElementById('inputGameImgPos').value;
     previewImg.classList.add(previewImgStyle,previewImgPos)
 
-    previewBG.style.background = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
-    previewBG.style.borderColor = `rgb(${r},${g},${b})`
-    previewBGMobile.style.background = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
-    previewBGMobile.style.borderColor = `rgb(${r},${g},${b})`
-    previewStatsBG.style.background = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
-    previewStatsBG.style.borderColor = `rgb(${r},${g},${b})`
+    let bgcolor = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
+    let bordercolor = `rgb(${r},${g},${b})`;
+
+    previewBG.style.background = bgcolor;
+    previewBG.style.borderColor = bordercolor;
+    previewBGMobile.style.background = bgcolor;
+    previewBGMobile.style.borderColor = bordercolor;
+    previewStatsBG.style.background = bgcolor;
+    previewStatsBG.style.borderColor = bordercolor;
+    previewVerso.style.background = bgcolor;
+    previewVerso.style.borderColor = bordercolor;
 }

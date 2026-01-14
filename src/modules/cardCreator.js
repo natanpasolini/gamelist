@@ -11,7 +11,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
             <div class="flex flex-row justify-center items-center md:gap-4 max-h-[400px]">
                 <div class="hover-3d h-full min-h-[400px]">
                     <figure>
-                        <div class="flex rounded-xl flex-col py-6 px-4 shadow-md w-[400px] backdrop-blur-md border" id="previewcardCard">
+                        <div class="hidden md:flex rounded-xl flex-col py-6 px-4 shadow-md w-[400px] backdrop-blur-md border" id="previewcardCard">
                             <div class="relative">
                                 <div class="px-[6px] rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
                                     <span class="text-white text-2xl leading-none font-silkscreen text-ultra-strong drop-shadow-xl/80" id="previewcardYear">
@@ -172,11 +172,18 @@ export function cardCreator() {
     document.body.insertAdjacentHTML('afterbegin', cardCreatorHtml);
 
     document.querySelectorAll('[id*="inputGame"]').forEach(input => {
-        if (input.id != 'inputGameYear') {
+        if (input.id != 'inputGameYear' || input.id != 'inputGameDesc') {
             input.addEventListener('input', handlePreviewChange);
+            if (input.id != 'inputGameRed' && input.id != 'inputGameGreen' && input.id != 'inputGameBlue') {
+                input.addEventListener('input', frenteCard);
+            };
         }
         input.addEventListener('change', formValueFix);
     });
+
+    document.getElementById('inputGameDesc').addEventListener('input', () => {
+        versoCard();
+    })
 
     document.getElementById('cardCreator').addEventListener('submit', (event) => {
         event.preventDefault();
@@ -192,7 +199,6 @@ export function cardCreator() {
         let d = document.getElementById('inputGameDesc').value;
         if (ma < a) {
             alert('Maximo de conquistas menor que o alcançado!');
-            console.log(a,ma);
         } else {
             if (ma > 0 && (a < 0 || a == '' || a == null)) {
                 a = 0;
@@ -205,3 +211,21 @@ export function cardCreator() {
 
     document.getElementById('modalCardCreator').showModal();
 };
+
+function frenteCard() {
+    const card = document.getElementById('modalCardCreator');
+    const frente = card.querySelector('#previewcardCard');
+    const verso = card.querySelector('#versoCreator');
+    if (frente.classList.contains('hidden')) frente.classList.remove('md:hidden'); verso.classList.add('hidden');
+}
+
+function versoCard() {
+    const card = document.getElementById('modalCardCreator');
+    const frente = card.querySelector('#previewcardCard');
+    const verso = card.querySelector('#versoCreator');
+    if (verso.classList.contains('hidden')) verso.classList.remove('hidden'); frente.classList.add('md:hidden');
+    const previewDesc = document.getElementById('previewcardDesc');
+    const inputDesc = document.getElementById('inputGameDesc');
+
+    previewDesc.innerHTML = inputDesc.value;
+}
