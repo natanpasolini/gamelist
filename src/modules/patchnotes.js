@@ -4,7 +4,8 @@ const patchNotes = [
         vs: 'b240',
         changes: [
             { type: 'FEATURE', text: '<b>IMAGEM DO CARD:</b> Agora você pode personalizar o estilo da imagem no container e sua posição (quando aplicável no estilo).'},
-            { type: 'UPDATE', text: '<b>ANO DO CARD:</b> Removido fundo e adicionado stroke.'}
+            { type: 'UPDATE', text: '<b>CRIADOR:</b> Agora é fechado ao criar um novo gamecard.'},
+            { type: 'UPDATE', text: '<b>GAMECARDS:</b> Removido fundo e adicionado stroke ao ano.'}
         ]
     },
     {

@@ -174,6 +174,7 @@ export function cardCreator() {
                 a = 0;
             }
             writeToData(t,y,a,ma,h,s,i,iS,rgb);
+            document.getElementById('modalCardCreator').remove();
             event.target.reset();
         }
     });
