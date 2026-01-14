@@ -13,15 +13,15 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                     <figure>
                         <div class="hidden md:flex rounded-xl flex-col py-6 px-4 shadow-md w-[400px] gamecard-bg-basic gamecard-border-basic backdrop-blur-md border" id="previewcardCard">
                             <div class="relative">
-                                <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
-                                    <span class="text-white text-2xl leading-none font-silkscreen" id="previewcardYear">
+                                <div class="px-[6px] rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
+                                    <span class="text-white text-2xl leading-none font-silkscreen text-ultra-strong" id="previewcardYear">
                                         ANO
                                     </span>
                                 </div>
                                 <div class="w-full px-5 py-3">
                                     <div class="border-2 rounded">
                                         <div class="aspect-video flex justify-center">
-                                            <img src="./src/imgs/placeholder.webp" class="aspect-video border border-white rounded object-cover" id="previewcardImg">
+                                            <img src="./src/imgs/placeholder.webp" class="aspect-video border border-white rounded" id="previewcardImg">
                                         </div>
                                     </div>
                                 </div>
@@ -111,10 +111,30 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                 <input type="number" max="255" placeholder="BLUE" id="inputGameBlue" class="min-w-0 border-b border-white font-silkscreen text-white outline-none">
                             </div>
                         </div>
+                        
                         <div class="flex flex-col w-full">
-                            <h1 class="text-white font-silkscreen">IMAGEM</h1>
+                            <h1 class="text-white font-silkscreen">IMAGEM OU GIF</h1>
                             <div class="flex flex-row gap-4 w-full">
-                                <input type="text" placeholder="link da imagem" id="inputGameImg" class="min-w-0 w-full border-b border-white font-silkscreen text-white outline-none">
+                                <input type="text" placeholder="link" id="inputGameImg" class="min-w-0 flex-1 border-b border-white font-silkscreen text-white outline-none">
+                                <div class="flex flex-1 items-center rounded text-white relative min-w-[100px] max-w-[170px] group">
+                                    <select id="inputGameImgStyle" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
+                                        <option value="object-fill" disabled selected>ESTILO</option>
+                                        <option value="object-fill">PREENCHER</option>
+                                        <option value="object-cover">COBRIR</option>
+                                        <option value="object-fit">CORTAR</option>
+                                        <option value="object-contain">CONTER</option>
+                                    </select>
+                                    <i class="hn hn-chevron-up absolute select-none z-0 right-3 text-[12px] peer-focus:rotate-180 transform transition"></i>
+                                </div>
+                                <div class="flex flex-1 items-center rounded text-white relative min-w-[100px] max-w-[170px] group hidden">
+                                    <select id="inputGameImgPos" class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
+                                        <option value="object-center" disabled selected>POS</option>
+                                        <option value="object-left">ESQUERDA</option>
+                                        <option value="object-center">CENTRO</option>
+                                        <option value="object-right">DIRETA</option>
+                                    </select>
+                                    <i class="hn hn-chevron-up absolute select-none z-0 right-3 text-[12px] peer-focus:rotate-180 transform transition"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center flex-1">

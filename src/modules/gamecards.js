@@ -31,15 +31,15 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
                     <figure>
                         <div class="card-hidden rounded-xl flex flex-col py-6 px-4 shadow-md w-[320px] md:w-[350px] lg:w-[400px] gamecard-bg-${bgColor} backdrop-blur-md border gamecard-border-${bgColor}" ${bgCustom}>
                             <div class="relative">
-                                <div class="px-[6px] py- m-0 bg-black border border-white rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
-                                    <span class="text-${textColor} text-2xl leading-none font-silkscreen">
-                                        ${year}
+                                <div class="min-w-[85px] m-0 rounded flex justify-center items-center absolute -rotate-30 select-none top-1 -left-3">
+                                    <span class="text-${textColor} text-2xl leading-none font-silkscreen text-ultra-strong drop-shadow-xl/80">
+                                        ${year}!
                                     </span>
                                 </div>
                                 <div class="w-full px-5 py-3">
                                     <div class="border-2 rounded">
                                         <div class="aspect-video flex justify-center">
-                                            <img src="${imglink}" class="aspect-video border border-white rounded object-cover">
+                                            <img src="${imglink}" class="aspect-video border border-white rounded object-cover object-left">
                                         </div>
                                     </div>
                                 </div>

@@ -19,7 +19,8 @@ export const handlePreviewChange = () => {
     if (hours == '' || hours == null) hours = 'HORAS';
 
     const score = document.getElementById('inputGameScore').value;
-    const img = './src/imgs/placeholder.webp';
+    let img = document.getElementById('inputGameImg').value;
+    if (img == '' || img == null) img = './src/imgs/placeholder.webp';
 
     const inputRed = document.getElementById('inputGameRed');
     const inputGreen = document.getElementById('inputGameGreen');
@@ -47,7 +48,9 @@ export function formValueFix() {
     let hours = document.getElementById('inputGameHours').value;
     let score = document.getElementById('inputGameScore').value;
     let img = document.getElementById('inputGameImg').value;
+    let imgStyle = document.getElementById('inputGameImgStyle').value;
 
+    let inputImgPos = document.getElementById('inputGameImgPos');
     let inputRed = document.getElementById('inputGameRed');
     let inputGreen = document.getElementById('inputGameGreen');
     let inputBlue = document.getElementById('inputGameBlue');
@@ -90,9 +93,9 @@ export function formValueFix() {
         score = 'N/A';
     }
 
-    if (img == '' || img == null) {
-        img = './src/imgs/placeholder.webp';
-    }
+    if (img == '' || img == null) img = './src/imgs/placeholder.webp';
+    if (imgStyle == 'object-cover' || imgStyle == 'object-contain') inputImgPos.parentElement.classList.remove('hidden'); else inputImgPos.parentElement.classList.add('hidden');
+
     if (!document.getElementById('modalCardEditor')) {
         previewCardChange(title,year,achievements,hours,score,img,rgb);
     }
@@ -126,7 +129,16 @@ function previewCardChange(title,year,achievements,hours,score,img,rgb) {
         previewScoreBG.classList.remove(score);
     });
     previewScoreBG.classList.add(`score-${score}`)
+    
     previewImg.src = `${img}`;
+    const imgClasses = ['object-contain','object-fit','object-fill','object-cover','object-left','object-center','object-right'];
+    imgClasses.forEach(object => {
+        previewImg.classList.remove(object);
+    });
+    const previewImgStyle = document.getElementById('inputGameImgStyle').value;
+    const previewImgPos = document.getElementById('inputGameImgPos').value;
+    previewImg.classList.add(previewImgStyle,previewImgPos)
+
     previewBG.style.background = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
     previewBG.style.borderColor = `rgb(${r},${g},${b})`
     previewBGMobile.style.background = `radial-gradient(circle,rgba(${r}, ${g}, ${b}, 0.7) 0%, rgba(${Math.round(r * 0.4)}, ${Math.round(g * 0.4)}, ${Math.round(b * 0.4)}, 0.7) 100%)`;
