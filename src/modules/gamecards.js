@@ -3,11 +3,12 @@ import { mouseState } from "../../main.js";
 import { data, refreshData } from "./handlerData.js";
 import { cardEditor } from "./cardEditor.js";
 
-export function buildCard(uid,title,year,achievements,maxachievements,hours,score,imglink,background,golden) {
+export function buildCard(uid,title,year,achievements,maxachievements,hours,score,imglink,imgstyle,background,golden) {
     hours += 'h';
     let textColor = 'white';
     let bgColor = 'basic';
     let dropShadow = '';
+    let imgclasses = `${imgstyle[0]} ${imgstyle[1]}`
     let r = background[0];
     let g = background[1];
     let b = background[2];
@@ -39,7 +40,7 @@ export function buildCard(uid,title,year,achievements,maxachievements,hours,scor
                                 <div class="w-full px-5 py-3">
                                     <div class="border-2 rounded">
                                         <div class="aspect-video flex justify-center">
-                                            <img src="${imglink}" class="aspect-video border border-white rounded object-cover object-left">
+                                            <img src="${imglink}" class="aspect-video border border-white rounded ${imgclasses}">
                                         </div>
                                     </div>
                                 </div>

@@ -162,6 +162,10 @@ export function cardCreator() {
         let y = document.getElementById('inputGameYear').value;
         let a = document.getElementById('inputGameAch').value;
         let ma = document.getElementById('inputGameMaxAch').value;
+        let h = document.getElementById('inputGameHours').value;
+        let s = document.getElementById('inputGameScore').value;
+        let i = document.getElementById('inputGameImg').value;
+        let iS = [document.getElementById('inputGameImgStyle').value,document.getElementById('inputGameImgPos').value];
         let rgb = [document.getElementById('inputGameRed').value,document.getElementById('inputGameGreen').value,document.getElementById('inputGameBlue').value]
         if (ma < a) {
             alert('Maximo de conquistas menor que o alcançado!');
@@ -169,10 +173,7 @@ export function cardCreator() {
             if (ma > 0 && (a < 0 || a == '' || a == null)) {
                 a = 0;
             }
-            let h = document.getElementById('inputGameHours').value;
-            let s = document.getElementById('inputGameScore').value;
-            let i = document.getElementById('inputGameImg').value;
-            writeToData(t,y,a,ma,h,s,i,rgb);
+            writeToData(t,y,a,ma,h,s,i,iS,rgb);
             event.target.reset();
         }
     });

@@ -174,5 +174,6 @@ function saveEdit(cardData) {
     cardData.hours = document.getElementById('inputGameHours').value;
     cardData.score = document.getElementById('inputGameScore').value;
     cardData.imglink = document.getElementById('inputGameImg').value;
+    cardData.imgstyle = [document.getElementById('inputGameImgStyle').value,document.getElementById('inputGameImgPos').value];
     cardData.background = [document.getElementById('inputGameRed').value,document.getElementById('inputGameGreen').value,document.getElementById('inputGameBlue').value];
 }
