@@ -19,9 +19,6 @@
     <navbar>
         <div class="flex flex-col md:flex-row justify-between items-center p-4 gap-6 w-full sticky top-0 bg-neutral-800 z-10 box-shadow border border-neutral-700">
             <div class="flex justify-start items-center gap-[15px] flex-1">
-                <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalPatchNotes.showModal()">
-                    <i class="hn hn-github text-white text-[32px]"></i>
-                </div>
                 <div class="flex items-center justify-center rounded-full w-[36px] h-[36px] hover:bg-neutral-700 cursor-pointer" onclick="modalGuia.showModal()">
                     <i class="hn hn-question text-white text-[24px]"></i>
                 </div>
@@ -157,6 +154,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="flex flex-col">
+                    <h1 class="font-silkscreen text-lg">OUTROS</h1>
+                    <div class="flex items-center justify-start rounded-full hover:bg-neutral-700 cursor-pointer px-2 pl-4 gap-4" onclick="modalPatchNotes.showModal()">
+                        <i class="hn hn-refresh-solid text-white text-[24px]"></i>
+                        <div class="flex flex-col">
+                            <h1 class="font-silkscreen">PATCH notes</h1>
+                            <p class="font-pixelify-sans text-sm">Clique aqui para ver as atualizações.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <span class="w-full h-[2px] bg-neutral-500 rounded-full"></span>
         </div>
@@ -165,8 +172,18 @@
     <!-- footer -->
      <footer>
         <div class="flex flex-row justify-between items-center p-4 gap-6 w-full bg-neutral-800 z-10 box-shadow border border-neutral-700">
-            <div class="flex justify-center items-center flex-1">
+            <div class="flex flex-col justify-center items-center flex-1 gap-2">
                 <p class="font-silkscreen text-center">© 2026 Natan Pasolini</p>
+                <div class="flex flex-row gap-2">
+                    <div class="flex flex-row gap-1 justify-center items-center bg-blue-800 rounded-md border border-blue-600 px-1 cursor-pointer hover:scale-105" onclick="window.open('https://www.linkedin.com/in/natan-pasolini/')">
+                        <i class="hn hn-linkedin select-none"></i>
+                        <p class="font-silkscreen select-none">LinkedIn</p>
+                    </div>
+                    <div class="flex flex-row gap-1 justify-center items-center bg-stone-800 rounded-md border border-stone-700 px-1 cursor-pointer hover:scale-105" onclick="window.open('https://github.com/natanpasolini')">
+                        <i class="hn hn-github select-none"></i>
+                        <p class="font-silkscreen select-none">Github</p>
+                    </div>
+                </div>
             </div>
         </div>
      </footer>

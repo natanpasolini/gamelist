@@ -1,5 +1,14 @@
 const patchNotes = [
     {
+        version: '<b>BETA</b> 4.0.1',
+        vs: 'b400',
+        changes: [
+            { type: 'UPDATE', text: '<b>PATCH NOTES:</b> Movido para configurações.'},
+            { type: 'UPDATE', text: '<b>RODAPÉ:</b> Adicionado botão de linkedin e github.'},
+            { type: 'BUGFIX', text: '<b>CRIADOR:</b> Corrigido comparação de conquistas maximas com alcançadas.'}
+        ]
+    },
+    {
         version: '<b>BETA</b> 4.0.0',
         vs: 'b400',
         changes: [
