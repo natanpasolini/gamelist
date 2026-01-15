@@ -206,8 +206,8 @@ export function cardCreator() {
         event.preventDefault();
         let t = document.getElementById('inputGameTitle').value;
         let y = document.getElementById('inputGameYear').value;
-        let a = document.getElementById('inputGameAch').value;
-        let ma = document.getElementById('inputGameMaxAch').value;
+        let a = Number(document.getElementById('inputGameAch').value);
+        let ma = Number(document.getElementById('inputGameMaxAch').value);
         let h = document.getElementById('inputGameHours').value;
         let s = document.getElementById('inputGameScore').value;
         let i = document.getElementById('inputGameImg').value;
