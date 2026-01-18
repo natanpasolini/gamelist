@@ -1,6 +1,6 @@
 # 🎮 Gamecards
 
-![GitHub repo size](https://img.shields.io/github/repo-size/natanpasolini/gamecards?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/natanpasolini/gamecards?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/badge/beta-4.1.0-blue?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/natanpasolini/gamecards?style=for-the-badge)
 
 ![Demonstração do Projeto](./gifs/card-creator.gif)
 > [!NOTE]
@@ -24,9 +24,10 @@
 ## Roadmap
 O projeto ainda está em desenvolvimento e tem as seguintes melhorias planejadas:
 
-- [ ] Novo guia de usuário
-- [ ] Presets para o seletor de cor (criados pelo usuário)
-  - [ ] Importar/Exportar presets
+- [ ] Novo guia de usuário;
+- [x] Busca de imagem de jogo através da API da steam;
+- [ ] Presets para o seletor de cor (criados pelo usuário);
+  - [ ] Importar/Exportar presets.
 
 e mais...
 
