@@ -125,7 +125,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                     <input type="color" class="min-w-[64px] h-full p-0 m-0 appearance-none bg-transparent cursor-pointer" id="inputGameColor">
                                     <div class="flex flex-1 flex-row justify-between gap-4">
                                         <div class="flex flex-col justify-center items-center w-1/2 gap-2 h-full">
-                                            <input  type="text" required placeholder="Nome" class="w-full flex-1 border-b border-white font-silkscreen text-white outline-none" id="inputGameColorPresetName">
+                                            <input  type="text" placeholder="Nome" class="w-full flex-1 border-b border-white font-silkscreen text-white outline-none" id="inputGameColorPresetName">
                                             <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95" id="inputGameColorPresetSave" onclick="saveColorPreset()">Salvar</button>
                                         </div>
                                         <div class="flex flex-col justify-between items-center w-1/2 gap-2 h-full">
@@ -136,7 +136,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                                 <i class="hn hn-chevron-up absolute select-none z-0 right-2 text-[12px] peer-focus:rotate-180 transform transition"></i>
                                             </div>
                                             <div class="flex flex-1 justify-center items-center">
-                                                <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95" onclick="loadPresetColor()">Carregar</button>
+                                                <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95" onclick="loadColorPreset(true)">Carregar</button>
                                             </div>
                                         </div>
                                     </div>

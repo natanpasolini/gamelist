@@ -256,12 +256,11 @@ export function saveColorPreset() {
     refreshPresets();
 }
 
-export function loadPresetColor() {
+export function loadColorPreset(handle) {
     const presetList = document.getElementById('inputGameColorPresetList');
     const inputColor = document.getElementById('inputGameColor');
 
     const presetSelected = presetList.value;
     inputColor.value = presets[presetSelected];
-
-    handlePreviewChange();
+    if (handle == true) handlePreviewChange();
 }

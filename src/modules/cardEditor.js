@@ -1,4 +1,4 @@
-import { data, refreshData } from "./handlerData.js";
+import { data, refreshData, refreshPresets } from "./handlerData.js";
 import { formValueFix, rgbToHex, hexToRGB } from "./cardPreview.js";
 import { mouseState, updateMouseState } from "../../main.js";
 
@@ -75,20 +75,19 @@ export function cardEditor(event) {
                                 </div>
                                 <div class="flex flex-row justify-start items-center gap-4 w-full h-[64px]">
                                     <input type="color" class="min-w-[64px] h-full p-0 m-0 appearance-none bg-transparent cursor-pointer" id="inputGameColor">
-                                    <div class="flex flex-1 flex-row justify-between gap-4 opacity-20">
+                                    <div class="flex flex-1 flex-row justify-between gap-4">
                                         <div class="flex flex-col justify-center items-center w-1/2 gap-2 h-full">
-                                            <input disabled type="text" required placeholder="Nome" class="w-full flex-1 border-b border-white font-silkscreen text-white outline-none">
-                                            <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95">Salvar</button>
+                                            <input type="text" placeholder="Nome" class="w-full flex-1 border-b border-white font-silkscreen text-white outline-none" id="inputGameColorPresetName">
+                                            <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95" id="inputGameColorPresetSave" onclick="saveColorPreset()">Salvar</button>
                                         </div>
                                         <div class="flex flex-col justify-between items-center w-1/2 gap-2 h-full">
                                             <div class="flex flex-1 justify-center items-center w-full relative">
-                                                <select disabled class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen">
-                                                    <option selected value="">DEFAULT</option>
+                                                <select class="peer z-1 pl-2 border rounded border-white appearance-none bg-transparent outline-none cursor-pointer w-full h-full font-silkscreen" id="inputGameColorPresetList">
                                                 </select>
                                                 <i class="hn hn-chevron-up absolute select-none z-0 right-2 text-[12px] peer-focus:rotate-180 transform transition"></i>
                                             </div>
                                             <div class="flex flex-1 justify-center items-center">
-                                                <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95">Carregar</button>
+                                                <button type="button" class="text-[10px] gamecard-bg-basic border gamecard-border-basic rounded-md p-2 font-silkscreen duration-200 cursor-pointer hover:bg-white hover:text-black hover:scale-105 active:scale-95" onclick="loadColorPreset(false)">Carregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -162,6 +161,7 @@ export function cardEditor(event) {
     let inputImgPos = document.getElementById('inputGameImgPos');
     if (imgstyle[0] == 'object-cover' || imgstyle[0] == 'object-contain') inputImgPos.parentElement.classList.remove('hidden'); else inputImgPos.parentElement.classList.add('hidden');
 
+    refreshPresets();
 
     document.querySelectorAll('[id*="inputGame"]').forEach(input => {
         input.addEventListener('change', formValueFix);

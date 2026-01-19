@@ -4,6 +4,7 @@ const patchNotes = [
         vs: 'b430',
         changes: [
             { type: 'FEATURE', text: '<b>CARDS POR PÁGINAS:</b> É possivel escolher a quantidade de cards por página no menu de configurações'},
+            { type: 'FEATURE', text: '<b>PRESETS:</b> É possivel salvar/carregar presets de cores no criador e editor de cards! (salvos localmente).'}
         ]
     },
     {
