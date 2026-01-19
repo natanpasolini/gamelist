@@ -1,6 +1,6 @@
 # 🎮 Gamecards
 
-![GitHub repo size](https://img.shields.io/badge/beta-4.2.0-blue?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/natanpasolini/gamecards?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/badge/beta-4.3.0-blue?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/natanpasolini/gamecards?style=for-the-badge)
 
 ![Demonstração do Projeto](./src/assets/gifs/card-creator.gif)
 > [!NOTE]
@@ -28,9 +28,9 @@ O projeto ainda está em desenvolvimento e tem as seguintes melhorias planejadas
 - [x] Novo guia de usuário;
 - [x] Busca de imagem de jogo através da API da steam;
 - [x] Otimização dos gamecards;
-- [ ] Menu "hamburguer" para mobile
-- [ ] Presets para o seletor de cor (criados pelo usuário);
+- [x] Presets para o seletor de cor (criados pelo usuário);
   - [ ] Importar/Exportar presets.
+- [ ] Menu "harmburguer" para mobile.
 
 e mais...
 
