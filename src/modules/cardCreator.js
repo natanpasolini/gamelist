@@ -22,7 +22,7 @@ const cardCreatorHtml = `<dialog class="modal" id="modalCardCreator">
                                 <div class="w-full px-5 py-3">
                                     <div class="border-2 rounded">
                                         <div class="aspect-video flex justify-center">
-                                            <img src="./src/imgs/placeholder.webp" class="aspect-video border border-white rounded" id="previewcardImg">
+                                            <img src="./src/assets/placeholder.webp" class="aspect-video border border-white rounded" id="previewcardImg">
                                         </div>
                                     </div>
                                 </div>

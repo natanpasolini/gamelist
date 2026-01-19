@@ -2,7 +2,7 @@
 
 ![GitHub repo size](https://img.shields.io/badge/beta-4.2.0-blue?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/natanpasolini/gamecards?style=for-the-badge)
 
-![Demonstração do Projeto](./gifs/card-creator.gif)
+![Demonstração do Projeto](./src/assets/gifs/card-creator.gif)
 > [!NOTE]
 > Gamecards é uma aplicação web do tipo CRUD voltada ao gerenciamento de uma biblioteca pessoal de jogos. O foco do projeto é usabilidade e experiência visual, permitindo que o usuário crie, edite e organize um inventário de jogos “zerados” por meio de cards interativos e personalizáveis.
 

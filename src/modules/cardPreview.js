@@ -20,7 +20,7 @@ export const handlePreviewChange = () => {
 
     const score = document.getElementById('inputGameScore').value;
     let img = document.getElementById('inputGameImg').value;
-    if (img == '' || img == null) img = './src/imgs/placeholder.webp';
+    if (img == '' || img == null) img = './src/assets/placeholder.webp';
 
     let inputColor = document.getElementById('inputGameColor');
 
@@ -76,7 +76,7 @@ export function formValueFix() {
         score = 'N/A';
     }
 
-    if (img == '' || img == null) img = './src/imgs/placeholder.webp';
+    if (img == '' || img == null) img = './src/assets/placeholder.webp';
     if (imgStyle == 'object-cover' || imgStyle == 'object-contain') inputImgPos.parentElement.classList.remove('hidden'); else inputImgPos.parentElement.classList.add('hidden');
 
     if (!document.getElementById('modalCardEditor')) {

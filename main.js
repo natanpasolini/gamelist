@@ -42,7 +42,7 @@ export function updateMouseState(type) {
             iconColor = 'red';
         }
         document.getElementById(`mouse${type}`).style.color = `${iconColor}`;
-        document.body.style.cursor = `url('./src/imgs/cursor-${type}.svg') ${coords}, crosshair`;
+        document.body.style.cursor = `url('./src/assets/cursor-${type}.svg') ${coords}, crosshair`;
     }
 }
 
