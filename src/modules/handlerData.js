@@ -8,7 +8,7 @@ import { handlePreviewChange } from "./cardPreview.js";
 export const data = [
 ];
 
-export const presets = {
+export let presets = {
     default: '#542989'
 };
 
@@ -182,10 +182,12 @@ export function buildCards() {
 function saveToLocalStorage() {
     localStorage.setItem('gamelist_db', JSON.stringify(data));
     localStorage.setItem('modalGuiaVisto', modalGuiaVisto);
+    localStorage.setItem('presets', JSON.stringify(presets));
 }
 
 export function loadFromLocalStorage() {
     const savedData = localStorage.getItem('gamelist_db');
+    const savedPresets = localStorage.getItem('presets');
     if (savedData) {
         const parsedData = JSON.parse(savedData);
         data.length = 0;
@@ -194,9 +196,15 @@ export function loadFromLocalStorage() {
         // Criar chaves novas em saves antigos.
         normalizeGamecards();
         
+        if (savedPresets) {
+            const parsedPresets = JSON.parse(savedPresets);
+            presets = parsedPresets;
+        }
+
         refreshData();
         return true;
     }
+    
     return false;
 }
 
@@ -244,6 +252,7 @@ export function saveColorPreset() {
         console.log(presets);
     }
 
+    saveToLocalStorage();
     refreshPresets();
 }
 
