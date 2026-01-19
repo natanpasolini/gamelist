@@ -8,7 +8,7 @@ const modalGuia = `
                 <p class="font-pixelify-sans text-md">
                     A toolbar é sua amiga! nela você encontrará as funções de card (criar, deletar e editar), os filtros e as configurações!
                 </p>
-                <img src='../gifs/card-creator.gif'>
+                <img src='./src/assets/gifs/card-creator.gif'>
                 <p class="font-pixelify-sans text-md">
                     Os gamecards permitem imagens via link (gifs também funcionam).
                 </p>
