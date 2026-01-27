@@ -21,6 +21,7 @@ window.changePage = changePage;
 window.refreshMaxCardsPerPage = refreshMaxCardsPerPage;
 window.saveColorPreset = saveColorPreset;
 window.loadColorPreset = loadColorPreset;
+window.showHamburguer = showHamburguer;
 
 /* Mousestate */
 export let mouseState = 'default';
@@ -83,6 +84,12 @@ function refreshMaxCardsPerPage(event) {
     selected.classList.add('bg-neutral-800');
     maxCardsPerPage = selected.dataset.cardsperpage;
     refreshData();
+}
+
+/* Menu hamburguer */
+function showHamburguer() {
+    const hamburguer = document.getElementById('hamburger');
+    hamburguer.classList.toggle('hidden');
 }
 
 /* Por ser um module, roda quando carrega a página */
