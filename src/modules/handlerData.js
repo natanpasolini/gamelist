@@ -1,7 +1,7 @@
 import { cardsFiltered, refreshFilters } from "./cardsfilter.js";
 import { buildCard } from "./gamecards.js";
 import { modalGuiaVisto } from "./modals.js";
-import { generatePages, totalPages } from "./cardPage.js";
+import { generatePages } from "./cardPage.js";
 import { maxCardsPerPage } from "../../main.js";
 import { handlePreviewChange } from "./cardPreview.js";
 
@@ -52,16 +52,19 @@ function sendCardData(data) {
     buildCard(uid,title,year,achievements,maxachievements,hours,score,imglink,imgstyle,background,desc);
 };
 
-export function downloadDB() {
+export function downloadData(type) {
     // Array pra JSON
-    const jsonString = JSON.stringify(data, null, 2);
+    let dataToConvert = '';
+    if (type == 'db') dataToConvert = data;
+    if (type == 'presets') dataToConvert = presets;
+    const jsonString = JSON.stringify(dataToConvert, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
 
     // Criar download invisivel
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'gamecards_db.json';
+    a.download = `gamecards_${type}.json`;
     
     // "Forçar" download
     a.click();
@@ -69,7 +72,7 @@ export function downloadDB() {
 }
 
 export function uploadDB(event) {
-    const fileInput = document.getElementById('fileInputHandler');
+    const fileInput = document.getElementById('dbFileInputHandler');
     const file = event.target.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -105,6 +108,38 @@ export function uploadDB(event) {
 
             // Cria todos os cards novos
             refreshData();
+
+            console.log("Upload concluído com sucesso!");
+            
+            // Resetar input
+            fileInput.value = ''; 
+
+        } catch (err) {
+            document.getElementById('modalErroUpload').showModal();
+            console.error(err);
+        }
+    };
+
+    reader.readAsText(file);
+}
+
+export function uploadPresets(event) {
+    const fileInput = document.getElementById('presetsFileInputHandler');
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        try {
+            const importedData = JSON.parse(e.target.result);
+            
+            if (typeof importedData !== 'object' || importedData == null || Array.isArray(importedData)) {
+                throw new Error("O arquivo precisa ser um object de presets.");
+            }
+
+            // Substituir object
+            presets = {default: '#542989'}; // Limpa object e adiciona o default
+            presets = importedData;
 
             console.log("Upload concluído com sucesso!");
             

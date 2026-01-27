@@ -1,5 +1,5 @@
 import { injectModals } from './src/modules/modals.js';
-import { downloadDB, uploadDB, loadFromLocalStorage, refreshData, data, saveColorPreset, loadColorPreset } from './src/modules/handlerData.js';
+import { downloadData, uploadDB, uploadPresets, loadFromLocalStorage, refreshData, data, saveColorPreset, loadColorPreset } from './src/modules/handlerData.js';
 import { handleFilterChange } from './src/modules/cardsfilter.js';
 import { attPatches } from './src/modules/patchnotes.js';
 import { cardCreator } from './src/modules/cardCreator.js';
@@ -13,8 +13,9 @@ window.cardFunctions = cardFunctions;
 window.updateMouseState = updateMouseState;
 window.cardCreator = cardCreator;
 window.cardEditor = cardEditor;
-window.downloadDB = downloadDB;
+window.downloadData = downloadData;
 window.uploadDB = uploadDB;
+window.uploadPresets = uploadPresets;
 window.findSteamID = findSteamID;
 window.chooseImage = chooseImage;
 window.changePage = changePage;

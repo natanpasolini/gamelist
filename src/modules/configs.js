@@ -3,23 +3,23 @@ const configsSections = ['DADOS', 'OUTROS'];
 const configs = [
     {
         section: 'DADOS',
-        title: 'Download',
-        description: 'Clique para fazer download da sua lista de jogos.',
-        id: 'Download',
-        icon: 'hn-download-alt-solid',
-        action: 'downloadDB()',
+        title: 'Database',
+        description: 'Dados da sua lista de jogos.',
+        id: 'Database', 
+        icon: 'hn-data-science',
+        action: '',
         extraLine: '',
-        extraDiv: ''
+        extraDiv: `<div class="flex flex-1 justify-center items-center font-silkscreen h-full"> <button class="flex justify-center p-1 bg-neutral-700 border border-neutral-600 rounded-l outline-none cursor-pointer hover:bg-neutral-600 bg-neutral-800" onclick="downloadData('db')"><i class="hn hn-download-alt-solid"></i></button> <button class="flex justify-center p-1 bg-neutral-700 border border-neutral-600 rounded-r outline-none cursor-pointer hover:bg-neutral-600 bg-neutral-800" onclick="document.getElementById('dbFileInputHandler').click()"><i class="hn hn-upload-alt-solid"></i> <input type="file" id="dbFileInputHandler" class="hidden" accept=".json"></button> </div>`
     },
     {
         section: 'DADOS',
-        title: 'Upload',
-        description: 'Clique para fazer upload da sua lista de jogos.',
-        id: 'Upload',
-        icon: 'hn-upload-alt-solid',
-        action: `document.getElementById('fileInputHandler').click()`,
-        extraLine: `<input type="file" id="fileInputHandler" class="hidden" accept=".json">`,
-        extraDiv: ''
+        title: 'PRESETS',
+        description: 'Seus presets de cores.',
+        id: 'Presets',
+        icon: 'hn-edit-solid',
+        action: ``,
+        extraLine: ``,
+        extraDiv: `<div class="flex flex-1 justify-center items-center font-silkscreen h-full"> <button class="flex justify-center p-1 bg-neutral-700 border border-neutral-600 rounded-l outline-none cursor-pointer hover:bg-neutral-600 bg-neutral-800" onclick="downloadData('presets')"><i class="hn hn-download-alt-solid"></i></button> <button class="flex justify-center p-1 bg-neutral-700 border border-neutral-600 rounded-r outline-none cursor-pointer hover:bg-neutral-600 bg-neutral-800" onclick="document.getElementById('presetsFileInputHandler').click()"><i class="hn hn-upload-alt-solid"></i> <input type="file" id="presetsFileInputHandler" class="hidden" accept=".json"></button> </div>`
     },
     {
         section: 'OUTROS',
@@ -29,7 +29,7 @@ const configs = [
         id: 'CardsPerPage',
         action: '',
         extraLine: '',
-        extraDiv: '<div class="flex flex-1 justify-center items-center font-silkscreen"> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-l outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800 bg-neutral-800" data-cardsperpage="6" onclick="refreshMaxCardsPerPage(event)">06</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="9" onclick="refreshMaxCardsPerPage(event)">09</button><button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="12" onclick="refreshMaxCardsPerPage(event)">12</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-r outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="30" onclick="refreshMaxCardsPerPage(event)">30</button>   </div>'
+        extraDiv: '<div class="flex flex-1 justify-center items-center font-silkscreen h-full"> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-l outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800 bg-neutral-800" data-cardsperpage="6" onclick="refreshMaxCardsPerPage(event)">06</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="9" onclick="refreshMaxCardsPerPage(event)">09</button><button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="12" onclick="refreshMaxCardsPerPage(event)">12</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-r outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="30" onclick="refreshMaxCardsPerPage(event)">30</button>   </div>'
     },
     {
         section: 'OUTROS',
@@ -72,7 +72,7 @@ export function attConfigs() {
     configs.forEach(config => {
         let configsButton = `<div class="flex flex-col border md:border-0 border-neutral-700 md:flex-row items-center justify-start rounded-md md:rounded-full transition duration-300 hover:bg-neutral-700 cursor-pointer p-2 md:pl-4 gap-2 md:gap-4" onclick="${config.action}" id="config${config.id}">
                         <i class="hn ${config.icon} text-white text-[24px]"></i>
-                        <div class="flex flex-col items-center md:items-start">
+                        <div class="flex flex-col items-center md:items-start md:min-w-[50%]">
                             <h1 class="font-silkscreen">${config.title}</h1>
                             <p class="font-pixelify-sans text-sm">${config.description}</p>
                             ${config.extraLine}
@@ -83,7 +83,10 @@ export function attConfigs() {
         section.innerHTML += configsButton;
     })
 
-    document.getElementById('fileInputHandler').addEventListener('change', (event) => {
+    document.getElementById('dbFileInputHandler').addEventListener('change', (event) => {
         uploadDB(event);
+    });
+    document.getElementById('presetsFileInputHandler').addEventListener('change', (event) => {
+        uploadPresets(event);
     });
 };
