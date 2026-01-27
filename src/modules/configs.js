@@ -23,16 +23,6 @@ const configs = [
     },
     {
         section: 'OUTROS',
-        title: 'Patch Notes',
-        description: 'Clique para ver as últimas atualizações',
-        icon: 'hn-refresh-solid',
-        id: 'PatchNotes',
-        action: 'modalPatchNotes.showModal()',
-        extraLine: '',
-        extraDiv: ''
-    },
-    {
-        section: 'OUTROS',
         title: 'Cards por página',
         description: 'Selecione os cards por página:',
         icon: 'hn-media',
@@ -40,6 +30,16 @@ const configs = [
         action: '',
         extraLine: '',
         extraDiv: '<div class="flex flex-1 justify-center items-center font-silkscreen"> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-l outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800 bg-neutral-800" data-cardsperpage="6" onclick="refreshMaxCardsPerPage(event)">06</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="9" onclick="refreshMaxCardsPerPage(event)">09</button><button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="12" onclick="refreshMaxCardsPerPage(event)">12</button> <button class="flex justify-center px-1 bg-neutral-700 border border-neutral-600 rounded-r outline-none cursor-pointer hover:bg-neutral-600 active:bg-neutral-800" data-cardsperpage="30" onclick="refreshMaxCardsPerPage(event)">30</button>   </div>'
+    },
+    {
+        section: 'OUTROS',
+        title: 'Patch Notes',
+        description: 'Clique para ver as últimas atualizações',
+        icon: 'hn-refresh-solid',
+        id: 'PatchNotes',
+        action: 'modalPatchNotes.showModal()',
+        extraLine: '',
+        extraDiv: ''
     }
 ];
 
