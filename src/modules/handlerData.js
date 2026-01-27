@@ -160,6 +160,7 @@ export function refreshData() {
     buildCards();
     newgameGamecard();
     saveToLocalStorage();
+    gameCount();
 }
 
 export function buildCards() {
@@ -298,4 +299,9 @@ export function loadColorPreset(handle) {
     const presetSelected = presetList.value;
     inputColor.value = presets[presetSelected];
     if (handle == true) handlePreviewChange();
+}
+
+function gameCount() {
+    const gameCountText = document.getElementById('headerGameCount');
+    gameCountText.innerHTML = data.length + ' JOGOS!';
 }

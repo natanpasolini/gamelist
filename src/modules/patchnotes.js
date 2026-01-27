@@ -5,7 +5,8 @@ const patchNotes = [
         changes: [
             { type: 'FEATURE', text: '<b>MOBILE:</b> Menu hamburguer para configs/guia.'},
             { type: 'FEATURE', text: '<b>PRESETS:</b> É possivel fazer download, upload e deletar seus presets'},
-            { type: 'UPDATE', text: '<b>CONFIGS:</b> Alterado opções na seção dados; Patch Notes agora é a ultima opção em outros.'}
+            { type: 'UPDATE', text: '<b>CONFIGS:</b> Alterado opções na seção dados; Patch Notes agora é a ultima opção em outros.'},
+            { type: 'UPDATE', text: '<b>HEADER:</b> Adicionado contador de jogos.'}
         ]
     },
     {
